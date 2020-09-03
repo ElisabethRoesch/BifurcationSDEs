@@ -36,3 +36,7 @@ function H_vectors(rep_output)
     end
     return resH
 end
+
+function pairwise_abs_dist(rep_output, ind_alpha_1, ind_alpha_2, ind_sigma_1, ind_sigma_2)
+    # TO DO
+end
