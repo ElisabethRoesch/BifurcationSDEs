@@ -43,8 +43,24 @@ function plot_rep_solve_3(outputs, list_alpha, list_sigma, alpha_start, alpha_en
     return ps
 end
 
-
-
+# this excludes the super small values
+function plot_rep_solve_4(outputs, list_alpha, list_sigma, alpha_start, alpha_end,  sigma_start, sigma_end, cols, alphas_col, ylims, cutoff_val)
+    ps = []
+    for i in range(sigma_start , stop = sigma_end)
+        for j in range(alpha_start, stop = alpha_end)
+            p = plot(xlab = "", ylab = "",  xlims = (-2, 0), ylims = ylims, grid = "off", size = (1000,1500), axis=nothing)
+            temp = rep_output[j,i]
+            inds = findall(x->x>cutoff_val, temp)
+            kdx_1_N200 = kde(temp[inds], bandwidth = 0.05)
+            sup1 = plot!(-log.(pdf(kdx_1_N200,-5.0:0.01:5.0).+1), -5.0:0.01:5.0, # we added log shift
+                    # label = "$(test_list_alpha[i]), $(test_list_sigma[j])"
+                     label = "", color =cols[i], alpha = alphas_col[i]
+                    )
+            push!(ps, p)
+        end
+    end
+    return ps
+end
 
 
 function plot_KS_vectors(KS_res, test_list_sigma, test_list_alpha)
