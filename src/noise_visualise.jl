@@ -95,17 +95,33 @@ function plot_H_vectors(H_res, test_list_sigma, test_list_alpha)
 end
 
 function plot_E_vectors(E_res, test_list_sigma, test_list_alpha)
-    p1 = plot(grid = "off", ylab = "Entropy",size = (900,400),palette = :default, xlab = "increasing stochastisity",  legend = :outertopright)
+    p1 = plot(grid = "off", ylab = "Entropy values",size = (900,400),palette = :default, xlab = "increasing stochastisity",  legend = :outertopright)
     for i in 1:Int(round(length(test_list_alpha)/2)+1)
         temp_alpha = test_list_alpha[i]
         plot!(test_list_sigma, E_res[i,:], label = "Alpha: $temp_alpha")
         scatter!(test_list_sigma, E_res[i,:], label = "")
     end
-    p2 = plot(grid = "off", ylab = "Entropy", size = (900,400),palette = :default, xlab = "increasing stochastisity",  legend = :outertopright)
+    p2 = plot(grid = "off", ylab = "Entropy values", size = (900,400),palette = :default, xlab = "increasing stochastisity",  legend = :outertopright)
     for i in Int(round(length(test_list_alpha)/2)+1):size(E_res)[1]
         temp_alpha = test_list_alpha[i]
         plot!(test_list_sigma, E_res[i,:], label = "Alpha: $temp_alpha")
         scatter!(test_list_sigma, E_res[i,:], label = "")
+    end
+    return p1,p2
+end
+
+function plot_P_vectors(P_res, test_list_sigma, test_list_alpha)
+    p1 = plot(grid = "off", ylab = "Pairwise entropy to lower sigma",size = (900,400),palette = :default, xlab = "increasing stochastisity",  legend = :outertopright)
+    for i in 1:Int(round(length(test_list_alpha)/2)+1)
+        temp_alpha = test_list_alpha[i]
+        plot!(test_list_sigma, P_res[i,:], label = "Alpha: $temp_alpha")
+        scatter!(test_list_sigma, P_res[i,:], label = "")
+    end
+    p2 = plot(grid = "off", ylab = "Pairwise Entropy to lower sigma", size = (900,400),palette = :default, xlab = "increasing stochastisity",  legend = :outertopright)
+    for i in Int(round(length(test_list_alpha)/2)+1):size(H_res)[1]
+        temp_alpha = test_list_alpha[i]
+        plot!(test_list_sigma, P_res[i,:], label = "Alpha: $temp_alpha")
+        scatter!(test_list_sigma, P_res[i,:], label = "")
     end
     return p1,p2
 end

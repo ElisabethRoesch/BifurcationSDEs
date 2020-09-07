@@ -31,7 +31,12 @@ p = plot_H_vectors(H_res, test_list_sigma, test_list_alpha)
 p_all =plot(p[1], p[2], layout=(1,2))
 
 
-Entropy_vectors(rep_output)
+
 E_res = Entropy_vectors(rep_output)
 p = plot_E_vectors(E_res, test_list_sigma, test_list_alpha)
+p_all =plot(p[1], p[2], layout=(1,2))
+
+
+P_res = pairwise_ent(rep_output)
+p = plot_P_vectors(P_res, test_list_sigma, test_list_alpha)
 p_all =plot(p[1], p[2], layout=(1,2))
