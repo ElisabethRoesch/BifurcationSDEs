@@ -44,4 +44,18 @@ savefig(string("test/plots/", bifur_type, "_hell_raw_data.pdf"))
 H_res = H_vectors(rep_output_potential)
 p = plot_H_vectors(H_res, test_list_sigma, test_list_alpha)
 p_all =plot(p[1], p[2], layout=(1,2))
+<<<<<<< HEAD
 savefig(string("test/plots/", bifur_type, "_hell_potential_data.pdf"))
+=======
+
+
+
+E_res = Entropy_vectors(rep_output)
+p = plot_E_vectors(E_res, test_list_sigma, test_list_alpha)
+p_all =plot(p[1], p[2], layout=(1,2))
+
+
+P_res = pairwise_ent(rep_output)
+p = plot_P_vectors(P_res, test_list_sigma, test_list_alpha)
+p_all =plot(p[1], p[2], layout=(1,2))
+>>>>>>> 9971b827fbca27682dc94ab12a6f67da31f40547
