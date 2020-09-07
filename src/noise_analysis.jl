@@ -20,7 +20,7 @@ function rep_solve(prob_arg_list, list_alpha, list_sigma)
     output_potential = Array{Array{Float64,1}}(undef,length(list_alpha),length(list_sigma))
     for i in range(1, stop = length(list_alpha))
         for j in range(1, stop = length(list_sigma))
-            test_p =[list_alpha[i], list_sigma[j]]
+            test_p = [list_alpha[i], list_sigma[j]]
             output_raw[i, j], output_potential[i, j] = solve_prob_alpha_sigma_new(test_prob_arg_list, test_p)
         end
     end
