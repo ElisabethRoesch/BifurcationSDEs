@@ -1,25 +1,33 @@
-function plot_rep_solve(outputs, list_alpha, list_sigma, alpha_start, alpha_end,  sigma_start, sigma_end, color_palette)
-    p = plot(xlab = "x", ylab = "potential", ylims = (-2, 0), grid = "off", legend = :outertopright, size = (1000,1100), palette = color_palette)
-    for i in range(alpha_start, stop = alpha_end)
-        for j in range(sigma_start, stop = sigma_end)
-            kdx_1_N200 = kde(rep_output[i,j], bandwidth = 0.05)
-            sup1 = plot!(-5.0:0.01:5.0, -log.(pdf(kdx_1_N200,-5.0:0.01:5.0).+1), # we added log shift
-                    label = "$(test_list_alpha[i]), $(test_list_sigma[j])")
-        end
-    end
-    return p
-end
+# function plot_rep_solve(outputs, list_alpha, list_sigma, alpha_start, alpha_end,  sigma_start, sigma_end, color_palette)
+#     p = plot(xlab = "x", ylab = "potential", ylims = (-2, 0), grid = "off", legend = :outertopright, size = (1000,1100), palette = color_palette)
+#     for i in range(alpha_start, stop = alpha_end)
+#         for j in range(sigma_start, stop = sigma_end)
+#             kdx_1_N200 = kde(rep_output[i,j], bandwidth = 0.05)
+#             sup1 = plot!(-5.0:0.01:5.0, -log.(pdf(kdx_1_N200,-5.0:0.01:5.0).+1), # we added log shift
+#                     label = "$(test_list_alpha[i]), $(test_list_sigma[j])")
+#         end
+#     end
+#     return p
+# end
 
-function plot_rep_solve_2(outputs, list_alpha, list_sigma, alpha_start, alpha_end,  sigma_start, sigma_end, cols, alphas_col)
+function plot_potentials(outputs, list_alpha, list_sigma, alpha_start, alpha_end,  sigma_start, sigma_end, cols, alphas_col)
     ps = []
     for i in range(sigma_start , stop = sigma_end)
         for j in range(alpha_start, stop = alpha_end )
             p = plot(xlab = "", ylab = "",  xlims = (-2, 0), grid = "off", size = (1000,1500), axis=nothing)
-            kdx_1_N200 = kde(rep_output[j,i], bandwidth = 0.05)
-            sup1 = plot!(-log.(pdf(kdx_1_N200,-5.0:0.01:5.0).+1), -5.0:0.01:5.0, # we added log shift
-                    # label = "$(test_list_alpha[i]), $(test_list_sigma[j])"
-                     label = "", color =cols[i], alpha = alphas_col[i]
-                    )
+            sup1 = plot!(outputs[j,i], -5.0:0.01:5.0, label = "", color = cols[i], alpha = alphas_col[i])
+            push!(ps, p)
+        end
+    end
+    return ps
+end
+
+function plot_raw_data(outputs, list_alpha, list_sigma, alpha_start, alpha_end,  sigma_start, sigma_end, cols, alphas_col)
+    ps = []
+    for i in range(sigma_start , stop = sigma_end)
+        for j in range(alpha_start, stop = alpha_end )
+            p = plot(xlab = "", ylab = "",  grid = "off",  size = (1000,1500), axis = nothing)
+            sup1 = plot!(outputs[j,i], label = "", color = cols[i], alpha = alphas_col[i])
             push!(ps, p)
         end
     end
@@ -27,29 +35,27 @@ function plot_rep_solve_2(outputs, list_alpha, list_sigma, alpha_start, alpha_en
 end
 
 
-function plot_rep_solve_3(outputs, list_alpha, list_sigma, alpha_start, alpha_end,  sigma_start, sigma_end, cols, alphas_col)
-    ps = []
-    for i in range(sigma_start , stop = sigma_end)
-        for j in range(alpha_start, stop = alpha_end )
-            p = plot(xlab = "", ylab = "",  xlims = (-2, 0), grid = "off", size = (1000,1500), axis=nothing)
-            kdx_1_N200 = kde(rep_output[j,i], bandwidth = 0.05)
-            sup1 = plot!(-log.(pdf(kdx_1_N200,-5.0:0.01:5.0).+1), -5.0:0.01:5.0, # we added log shift
-                    # label = "$(test_list_alpha[i]), $(test_list_sigma[j])"
-                     label = "", color =cols[i], alpha = alphas_col[i]
-                    )
-            push!(ps, p)
-        end
-    end
-    return ps
-end
-
-# this excludes the super small values
-function plot_rep_solve_4(outputs, list_alpha, list_sigma, alpha_start, alpha_end,  sigma_start, sigma_end, cols, alphas_col, ylims, cutoff_val)
+# function plot_rep_solve_3(outputs, list_alpha, list_sigma, alpha_start, alpha_end,  sigma_start, sigma_end, cols, alphas_col)
+#     ps = []
+#     for i in range(sigma_start , stop = sigma_end)
+#         for j in range(alpha_start, stop = alpha_end )
+#             p = plot(xlab = "", ylab = "",  xlims = (-2, 0), grid = "off", size = (1000,1500), axis = nothing)
+#             kdx_1_N200 = kde(rep_output[j,i], bandwidth = 0.05)
+#             potential = -log.(pdf(kdx_1_N200,-5.0:0.01:5.0).+1)
+#             sup1 = plot!(potential, -5.0:0.01:5.0, label = "", color = cols[i], alpha = alphas_col[i])
+#             push!(ps, p)
+#         end
+#     end
+#     return ps
+# end
+#
+# # this excludes the super small values
+function plot_potential_unstable(outputs, list_alpha, list_sigma, alpha_start, alpha_end,  sigma_start, sigma_end, cols, alphas_col, ylims, cutoff_val)
     ps = []
     for i in range(sigma_start , stop = sigma_end)
         for j in range(alpha_start, stop = alpha_end)
             p = plot(xlab = "", ylab = "",  xlims = (-2, 0), ylims = ylims, grid = "off", size = (1000,1500), axis=nothing)
-            temp = rep_output[j,i]
+            temp = outputs[j,i]
             inds = findall(x->x>cutoff_val, temp)
             kdx_1_N200 = kde(temp[inds], bandwidth = 0.05)
             sup1 = plot!(-log.(pdf(kdx_1_N200,-5.0:0.01:5.0).+1), -5.0:0.01:5.0, # we added log shift
