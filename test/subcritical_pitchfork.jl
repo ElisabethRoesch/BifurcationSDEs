@@ -1,25 +1,54 @@
 include("../src/includes.jl")
 
-
+bifur_type = "subcritical_pitchfork"
 test_list_alpha, test_list_sigma = Array(range(-15., stop = 15.0, length = 9)), Array(range(-0., stop = 2.0, length = 4))
 tspan = (0.0, 2.0)
+timepoints = 0.2:0.2:2.0
 initpoints = range(-5., stop = 5.0, length = 10)
-test_prob_arg_list = [f_subcritical_pitchfork, g_multiplicative_noise, tspan, initpoints]
-@time rep_output = rep_solve(test_prob_arg_list, test_list_alpha, test_list_sigma) #first dim is alpha, second dim is sigma
-file_path = "test/data/rep_output_subcritical_pitchfork.jld"
-save(file_path, "rep_output", rep_output)
+npoints = 20
+test_prob_arg_list = [f_subcritical_pitchfork, g_multiplicative_noise, tspan, initpoints, timepoints, npoints]
+@time rep_output_raw, rep_output_potential = rep_solve(test_prob_arg_list, test_list_alpha, test_list_sigma) #first dim is alpha, second dim is sigma
+file_path_raw = string("test/data/rep_output_", bifur_type, "_raw.jld")
+file_path_potential = string("test/data/rep_output_", bifur_type, "_potential.jld")
+save(file_path_raw, "rep_output_raw", rep_output_raw)
+save(file_path_potential, "rep_output_potential", rep_output_potential)
 
 # Or load data:
-rep_outputw = load(file_path)["rep_output"]
-
+rep_output_raw = load(file_path_raw)["rep_output_raw"]
+rep_output_potential = load(file_path_potential)["rep_output_potential"]
 
 cols = ["#696969","#920005","#920005","#920005"]
 alphas_col = [1.,.4,.6,1.]
-ps = plot_rep_solve_2(rep_output, test_list_alpha, test_list_sigma, 1, length(test_list_alpha), 1, 4, cols, alphas_col)
+ps = plot_potentials(rep_output_potential, test_list_alpha, test_list_sigma, 1, length(test_list_alpha), 1, 4, cols, alphas_col)
     p_app = plot(ps..., layout = (4,9))
-    savefig("test/plots/subcritical_pitchfork_summary_plot_2.pdf")
+    savefig(string("test/plots/", bifur_type, "_summary_plot_2_potential.pdf"))
 
-ps = plot_rep_solve_4(rep_output, test_list_alpha, test_list_sigma, 1,
+
+ps = plot_raw_data(rep_output_raw, test_list_alpha, test_list_sigma, 1,
     length(test_list_alpha), 1, length(test_list_sigma), cols, alphas_col, (-5,5), -100)
     p_app = plot(ps..., layout = ( length(test_list_sigma),length(test_list_alpha)))
-    savefig("test/plots/subcritical_pitchfork_summary_plot_3.pdf")
+    savefig(string("test/plots/", bifur_type, "_summary_plot_2_raw.pdf"))
+
+ps = plot_potential_unstable(rep_output_raw, test_list_alpha, test_list_sigma, 1,
+    length(test_list_alpha), 1, length(test_list_sigma), cols, alphas_col, (-5,5), -100)
+    p_app = plot(ps..., layout = ( length(test_list_sigma), length(test_list_alpha)))
+    savefig(string("test/plots/", bifur_type, "_summary_plot_unstable.pdf"))
+
+KS_res = KS_vectors(rep_output_raw)
+p = plot_KS_vectors(KS_res, test_list_sigma, test_list_alpha)
+p_all =plot(p[1], p[2], layout=(1,2))
+savefig(string("test/plots/", bifur_type, "_KS_raw_data.pdf"))
+KS_res = KS_vectors(rep_output_potential)
+p = plot_KS_vectors(KS_res, test_list_sigma, test_list_alpha)
+p_all =plot(p[1], p[2], layout=(1,2))
+savefig(string("test/plots/", bifur_type, "_KS_potential_data.pdf"))
+
+H_res = H_vectors(rep_output_raw)
+p = plot_H_vectors(H_res, test_list_sigma, test_list_alpha)
+p_all =plot(p[1], p[2], layout=(1,2))
+savefig(string("test/plots/", bifur_type, "_hell_raw_data.pdf"))
+
+H_res = H_vectors(rep_output_potential)
+p = plot_H_vectors(H_res, test_list_sigma, test_list_alpha)
+p_all =plot(p[1], p[2], layout=(1,2))
+savefig(string("test/plots/", bifur_type, "_hell_potential_data.pdf"))
