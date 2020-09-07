@@ -36,3 +36,13 @@ function H_vectors(rep_output)
     end
     return resH
 end
+
+function Entropy_vectors(rep_output)
+    resE = Array{Float64}(undef,size(rep_output)[1],size(rep_output)[2])
+    for i in 1:size(rep_output)[1]
+        for j in 1:size(rep_output)[2]
+            resE[i,j] = get_entropy(rep_output[i,j])
+        end
+    end
+    return resE
+end
