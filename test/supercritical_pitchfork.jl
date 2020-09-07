@@ -5,7 +5,7 @@ test_list_alpha, test_list_sigma = Array(range(-15., stop = 15.0, length = 9)), 
 tspan = (0.0, 2.0)
 timepoints = 0.2:0.2:2.0
 initpoints = range(-5., stop = 5.0, length = 10)
-npoints = 20
+npoints = 20 # keeping this low is good for performance
 test_prob_arg_list = [f_supercritical_pitchfork, g_multiplicative_noise, tspan, initpoints, timepoints, npoints]
 @time rep_output_raw, rep_output_potential = rep_solve(test_prob_arg_list, test_list_alpha, test_list_sigma) #first dim is alpha, second dim is sigma
 file_path_raw = string("test/data/rep_output_", bifur_type, "_raw.jld")
@@ -44,9 +44,7 @@ savefig(string("test/plots/", bifur_type, "_hell_raw_data.pdf"))
 H_res = H_vectors(rep_output_potential)
 p = plot_H_vectors(H_res, test_list_sigma, test_list_alpha)
 p_all =plot(p[1], p[2], layout=(1,2))
-<<<<<<< HEAD
 savefig(string("test/plots/", bifur_type, "_hell_potential_data.pdf"))
-=======
 
 
 
@@ -58,4 +56,3 @@ p_all =plot(p[1], p[2], layout=(1,2))
 P_res = pairwise_ent(rep_output)
 p = plot_P_vectors(P_res, test_list_sigma, test_list_alpha)
 p_all =plot(p[1], p[2], layout=(1,2))
->>>>>>> 9971b827fbca27682dc94ab12a6f67da31f40547
