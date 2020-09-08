@@ -131,3 +131,18 @@ function plot_P_vectors(P_res, test_list_sigma, test_list_alpha)
     end
     return p1, p2
 end
+
+function plot_summary_stat(summ_stat, test_list_alpha, test_list_sigma, cols, alphas_col)
+    ps = []
+    ann_cols = [:black, "#920005","#920005","#920005"]
+    for i in 1:length(test_list_sigma)
+        p_temp = plot(grid = "off", ylab = "", ylim = (0.,5), size = (500, 1500), palette = :default, xlab = "",  axis = nothing)
+        plot!(test_list_alpha, summ_stat[:,i], label = "", color = cols[i], alpha = alphas_col[i])
+        scatter!(test_list_alpha, summ_stat[:,i], label = "", color = cols[i], alpha = alphas_col[i])
+        plot!([0.000000000000001,0], [0,summ_stat[Int(round(length(test_list_alpha)/2) + 1), i]], color = cols[i], alpha = alphas_col[i], label = "")
+        x0_dist = round(summ_stat[Int(round(length(test_list_alpha)/2) + 1), i], digits = 2)
+        annotate!(10, 0.5, text("H (α = 0) = $x0_dist", :right, 10, color = ann_cols[i], alpha = alphas_col[i]))
+        push!(ps, p_temp)
+    end
+    return ps
+end

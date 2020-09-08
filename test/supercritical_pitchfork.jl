@@ -60,4 +60,9 @@ p = plot_E_vectors(E_res, test_list_sigma, test_list_alpha)
 P_res = pairwise_ent(rep_output_raw)
 p = plot_P_vectors(P_res, test_list_sigma, test_list_alpha)
     p_all = plot(p[1], p[2], layout = (1, 2))
-    savefig(string("test/plots/", bifur_type, "_entropy_single_pairwise_data.pdf"))
+    savefig(string("test/plots/", bifur_type, "_entropy_pairwise_raw_data.pdf"))
+
+
+ps_test = plot_summary_stat(E_res, test_list_alpha, test_list_sigma, cols, alphas_col)
+    p_all = plot(ps_test... , layout = (4, 1))
+    savefig(string("test/plots/", bifur_type, "_entropy_single_data_summ_stat_plot.pdf"))
