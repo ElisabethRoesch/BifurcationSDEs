@@ -163,3 +163,20 @@ function plot_large_scale_all_sum_stats(sum_stats, test_list_alpha, test_list_si
     end
     return p
 end
+
+
+
+function workflow_time_one_sig_one_alpha(rep_output_raw, ind_alpha, ind_sigma)
+        p_ode_time = plot(grid = "off", xlab = "Time", ylab = "U", label ="", size(1000, 1000))
+            for i in 0:9 # 9 is number fo time points saved per ODE/SDE solution
+                    plot!(1+i*10:10+i*10,rep_output_raw[ind_alpha,ind_sigma][1+i*20*10:10+i*20*10], color = :black, label = "", size(1000, 1000))
+            end
+        return p_ode_time
+end
+
+
+function workflow_potential_one_sig_one_alpha(rep_output_potential, ind_alpha, ind_sigma)
+    plt_pot = plot(-rep_output_potential[ind_alpha,ind_sigma], 1:length(rep_output_potential[ind_alpha,ind_sigma]),
+                    label = "", axis = nothing, xlab = "Potential", ylab = "", grid = "off", size(200, 200))
+    return plt_pot
+end
