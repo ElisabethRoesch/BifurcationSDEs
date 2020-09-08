@@ -146,3 +146,20 @@ function plot_summary_stat(summ_stat, test_list_alpha, test_list_sigma, cols, al
     end
     return ps
 end
+
+function plot_large_scale(summ_stat, test_list_alpha, test_list_sigma)
+    p = plot(grid = "off", ylab = "H(σ, α = 0)", size = (500, 500), palette = :default, xlab = "σ")
+    plot!(test_list_sigma, summ_stat[1,:], color =:black, label = "")
+    scatter!(test_list_sigma, summ_stat[1,:], color =:black, label = "")
+    return p
+end
+
+function plot_large_scale_all_sum_stats(sum_stats, test_list_alpha, test_list_sigma, labels)
+    cols = [:blue, :green, :orange, :red]
+    p = plot(grid = "off", ylab = "Summary statistic (α = 0)", size = (500, 1000), palette = :default, xlab = "σ")
+    for i in 1:length(sum_stats)
+        plot!(test_list_sigma, sum_stats[i][1,:], color =cols[i], label = labels[i])
+        scatter!(test_list_sigma, sum_stats[i][1,:],color =cols[i],  label = "")
+    end
+    return p
+end
