@@ -29,3 +29,7 @@ p_pot_sde_pos = workflow_potential_one_sig_one_alpha(rep_output_potential, 6, 3)
         savefig(string("test/plots/workflow/", bifur_type, "_p_pot_sde_pos.pdf"))
 p_pot_ode_neg = workflow_potential_one_sig_one_alpha(rep_output_potential, 4, 1)
         savefig(string("test/plots/workflow/", bifur_type, "_p_pot_ode_neg.pdf"))
+
+
+        # create a plot with 3 subplots and a custom layout
+        # l = @layout [a{0.7w} b; c{0.2h}]
