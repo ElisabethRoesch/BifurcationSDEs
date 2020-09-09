@@ -4,11 +4,11 @@ end
 function get_file_path_pot(bifur_type)
     return string("test/data/rep_output_", bifur_type, "_potential.jld")
 end
+function get_file_path_pot_rerun(bifur_type)
+    return string("test/data/rerun_longer_time_span/rep_output_", bifur_type, ".jld")
+end
 function load_raw(file_path_raw)
     return load(file_path_raw)["rep_output_raw"]
-end
-function load_pot(file_path_pot)
-    return load(file_path_pot)["rep_output_potential"]
 end
 function get_file_path_plot_entropy(bifur_type)
     return string("test/plots/contour/", bifur_type, "_contour_entropy.pdf")
@@ -45,10 +45,7 @@ function plot_multi_contour_pot(rep_output_pots)
         pot_temp_bifur = rep_output_pots[i]
         cf_pot_s_temp_bifur = []
         for j in 1:n_sigmas
-            println("i is ",i)
-            println("j is ",j)
             pot_temp_bifur_temp_sigma = pot_temp_bifur[:,j]
-            println(pot_temp_bifur_temp_sigma[1][501])
             cf_pot_temp_bifur_temp_sigma = plot_contour_pot(pot_temp_bifur_temp_sigma)
             push!(cf_pot_s_temp_bifur, cf_pot_temp_bifur_temp_sigma)
         end
