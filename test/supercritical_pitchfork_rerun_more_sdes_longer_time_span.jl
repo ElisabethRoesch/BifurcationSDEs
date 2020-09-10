@@ -1,16 +1,16 @@
 include("../src/includes.jl")
 
 bifur_type = "supercritical_pitchfork"
-file_path_raw = string("test/data/test/data/rerun_more_sdes_longer_time_span/rep_output_", bifur_type, "_raw_rerun_more_sdes_longer_time_span.jld")
-file_path_potential = string("test/data/test/data/rerun_more_sdes_longer_time_span/rep_output_", bifur_type, "_potential_rerun_more_sdes_longer_time_span.jld")
-test_list_alpha, test_list_sigma = Array(range(-15., stop = 15.0, length = 9)), Array(range(-0., stop = 2.0, length = 4))
+file_path_raw = string("test/data/rerun_longer_time_span/rep_output_", bifur_type, "_raw_rerun_more_sdes_longer_time_span2.jld")
+file_path_potential = string("test/data/rerun_longer_time_span/rep_output_", bifur_type, "_potential_rerun_more_sdes_longer_time_span2.jld")
+test_list_alpha, test_list_sigma = Array(range(-15., stop = 15.0, length = 20)), Array(range(-0., stop = 2.0, length = 4))
 
 
 # Next lines only for rerun.
 tspan = (0.0, 20.0)
 timepoints = 2.:2.:20.0
 initpoints = range(-5., stop = 5.0, length = 10)
-npoints = 200
+npoints = 1000
 test_prob_arg_list = [f_supercritical_pitchfork, g_multiplicative_noise, tspan, initpoints, timepoints, npoints]
 @time rep_output_raw, rep_output_potential = rep_solve(test_prob_arg_list, test_list_alpha, test_list_sigma) #first dim is alpha, second dim is sigma
 save(file_path_raw, "rep_output_raw", rep_output_raw)
