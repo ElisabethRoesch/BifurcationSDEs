@@ -174,8 +174,7 @@ function workflow_time_one_sig_one_alpha(rep_output_raw, ind_alpha, ind_sigma)
 end
 
 function workflow_potential_one_sig_one_alpha(rep_output_potential, ind_alpha, ind_sigma)
-    plt_pot = plot(-rep_output_potential[ind_alpha,ind_sigma], 1:length(rep_output_potential[ind_alpha, ind_sigma]),
-                    label = "", axis = nothing, xlab = "", ylab = "", grid = "off", color = :black )
-    plot!(size=(200,400), axis = nothing)
+    plt_pot = plot(-rep_output_potential[ind_alpha, ind_sigma], 1:length(rep_output_potential[ind_alpha, ind_sigma]),
+                    label = "",  xlab = "", xlim =(-5,5), ylab = "", grid = "off", color = :black ,size=(500,1000), axis = nothing)
     return plt_pot
 end

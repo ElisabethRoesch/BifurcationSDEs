@@ -17,6 +17,7 @@ end
 function unstable(al)
     return 0
 end
+alphas = Array(range(-15, stop = 15, length=9))
 x = Array(range(-15, stop = 15, length=90))
 bifur_dia = plot(alphas, unstable, axis = nothing, label = "unstable", line = :dash, color ="black", grid = "off")
 plot!(x,stable1,  xlabel = "α", ylabel = "X",legend = :topleft, label ="stable" ,color ="black")
@@ -26,7 +27,6 @@ plot!(x,stable2, legend = :topleft, label ="" ,color ="black", ylim = (-5,5))
 function f(alpha, n)
     return -(alpha/2)n^2+(1/4)n^4
 end
-alphas = Array(range(-15, stop = 15, length=9))
 ns = Array(range(-5, stop = 5, length =10))
 analytic = contourf(alphas, ns, f, xlab = "α", ylab = "X", legend = false, ylim = (-5,5), axis = nothing)
 
