@@ -1,2 +1,5 @@
-print("Hello, Helix!")
-ssh eroesch@spartan.hpc.unimelb.edu.au
+
+
+using JLD, Plots
+gr()
+savefig(plot([1],[1]), "test.pdf")
