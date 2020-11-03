@@ -1,7 +1,7 @@
 #!/bin/bash
-#SBATCH --nodes=1
-#SBATCH --ntasks=8
-#SBATCH --time=0-12:00:00
+#SBATCH --ntasks=1
+#SBATCH --time=01:00:00
+#SBATCH --mem-per-cpu=2048
 # Note: SLURM defaults to running jobs in the directory
 
 # Load required modules
