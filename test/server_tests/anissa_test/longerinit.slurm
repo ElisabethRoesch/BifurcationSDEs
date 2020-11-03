@@ -8,5 +8,5 @@
 module load julia/1.5.1-linux-x86_64
 
 # Launch julia code
-julia supercritical_pitchfork_rerun_more_sdes_longer_timespan_more_inits.jl
+julia supercritical_pitchfork_rerun_more_inits.jl
 
