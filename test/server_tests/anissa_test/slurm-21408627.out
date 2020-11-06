@@ -1,0 +1,284 @@
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+ERROR: LoadError: UndefVarError: plot_contour not defined
+Stacktrace:
+ [1] top-level scope at /data/gpfs/projects/punim0638/anissa/BifurcationSDEs/test/server_tests/anissa_test/option1.jl:69
+ [2] include(::Function, ::Module, ::String) at ./Base.jl:380
+ [3] include(::Module, ::String) at ./Base.jl:368
+ [4] exec_options(::Base.JLOptions) at ./client.jl:296
+ [5] _start() at ./client.jl:506
+in expression starting at /data/gpfs/projects/punim0638/anissa/BifurcationSDEs/test/server_tests/anissa_test/option1.jl:69
+66383.114814 seconds (1.03 T allocations: 91.752 TiB, 28.30% gc time)
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+ERROR: LoadError: UndefVarError: plot_contour not defined
+Stacktrace:
+ [1] top-level scope at /data/gpfs/projects/punim0638/anissa/BifurcationSDEs/test/server_tests/anissa_test/option2.jl:71
+ [2] include(::Function, ::Module, ::String) at ./Base.jl:380
+ [3] include(::Module, ::String) at ./Base.jl:368
+ [4] exec_options(::Base.JLOptions) at ./client.jl:296
+ [5] _start() at ./client.jl:506
+in expression starting at /data/gpfs/projects/punim0638/anissa/BifurcationSDEs/test/server_tests/anissa_test/option2.jl:71
+11901.185163 seconds (144.80 G allocations: 12.920 TiB, 22.41% gc time)
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+ERROR: LoadError: UndefVarError: plot_contour not defined
+Stacktrace:
+ [1] top-level scope at /data/gpfs/projects/punim0638/anissa/BifurcationSDEs/test/server_tests/anissa_test/option3.jl:71
+ [2] include(::Function, ::Module, ::String) at ./Base.jl:380
+ [3] include(::Module, ::String) at ./Base.jl:368
+ [4] exec_options(::Base.JLOptions) at ./client.jl:296
+ [5] _start() at ./client.jl:506
+in expression starting at /data/gpfs/projects/punim0638/anissa/BifurcationSDEs/test/server_tests/anissa_test/option3.jl:71
+6462.349167 seconds (102.91 G allocations: 9.183 TiB, 27.53% gc time)
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+/home/anissa_guillemin/.julia/packages/GR/BwGt2/src/../deps/gr/bin/gksqt: error while loading shared libraries: libQt5Widgets.so.5: cannot open shared object file: No such file or directory
+connect: Connection refused
+GKS: can't connect to GKS socket application
+
+GKS: Open failed in routine OPEN_WS
+GKS: GKS not in proper state. GKS must be either in the state WSOP or WSAC in routine ACTIVATE_WS
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+┌ Warning: Unused font kwarg: alpha
+└ @ Plots ~/.julia/packages/Plots/5ItHH/src/components.jl:312
+ERROR: LoadError: UndefVarError: plot_contour not defined
+Stacktrace:
+ [1] top-level scope at /data/gpfs/projects/punim0638/anissa/BifurcationSDEs/test/server_tests/anissa_test/option4.jl:71
+ [2] include(::Function, ::Module, ::String) at ./Base.jl:380
+ [3] include(::Module, ::String) at ./Base.jl:368
+ [4] exec_options(::Base.JLOptions) at ./client.jl:296
+ [5] _start() at ./client.jl:506
+in expression starting at /data/gpfs/projects/punim0638/anissa/BifurcationSDEs/test/server_tests/anissa_test/option4.jl:71
+1242.755476 seconds (14.54 G allocations: 1.301 TiB, 21.63% gc time)

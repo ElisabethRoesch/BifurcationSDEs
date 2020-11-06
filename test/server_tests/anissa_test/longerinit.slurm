@@ -1,6 +1,6 @@
 #!/bin/bash
-#SBATCH --nodes=4
-#SBATCH --ntasks=16
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
 #SBATCH --time=2-23:59:59
 #SBATCH --mail-user=anissa.guillemin@unimelb.edu.au
 #SBATCH --mail-type=ALL
