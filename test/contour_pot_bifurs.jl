@@ -20,7 +20,8 @@ file_path_plots = [get_file_path_plot_pot(bifur_types[i]) for i in 1:n_bifurs]
 
 
 ps = plot_multi_contour_pot(rep_output_pots)
-[savefig(plot(ps[i] ... , layout = (1,4), size = (2000,500)), file_path_plots[i]) for i in 1:n_bifurs]
+
+#[savefig(plot(ps[i] ... , layout = (1,4), size = (2000,500)), file_path_plots[i]) for i in 1:n_bifurs]
 
 
 plot(ps[1]..., layout = (1,4), size = (2000,500))

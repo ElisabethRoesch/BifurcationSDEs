@@ -15,7 +15,7 @@ file_path_plots = [get_file_path_plot_entropy(bifur_types[i]) for i in 1:n_bifur
 Es = [get_entropy_single(rep_output_raws[i]) for i in 1:n_bifurs]
 
 p_cf_e_s = plot_multi_contourf_entropy(Es,  test_list_alphas, test_list_sigmas)
-[savefig(p_cf_e_s[i], file_path_plots[i]) for i in 1:n_bifurs]
+#[savefig(p_cf_e_s[i], file_path_plots[i]) for i in 1:n_bifurs]
 
 # z = [f(i,j) for i in test_list_alpha, j in test_list_sigma]
 # h = heatmap(test_list_alpha, test_list_sigma, f, size = (500,500), legend=false, xlabel = "α", ylabel = "σ")

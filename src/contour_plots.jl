@@ -10,6 +10,9 @@ end
 function load_raw(file_path_raw)
     return load(file_path_raw)["rep_output_raw"]
 end
+function load_pot(file_path_pot)
+    return load(file_path_pot)["rep_output_potential"]
+end
 function get_file_path_plot_entropy(bifur_type)
     return string("test/plots/contour/", bifur_type, "_contour_entropy.pdf")
 end
