@@ -32,7 +32,7 @@ analytic = contourf(alphas, ns, f, xlab = "α", ylab = "X", legend = false, ylim
 
 
 
-file_path = "test/data/rerun_longer_time_span/rep_output_supercritical_pitchfork_potential_rerun_more_sdes_longer_time_span.jld"
+file_path = "test/server_tests/anissa_test_multi_init/plots1/data/rerun_longer_time_span/rep_output_supercritical_pitchfork_potential_rerun_more_inits.jld"
 pot = load(file_path)["rep_output_potential"]
 det = pot[:,1]
 function plot_contour_pot(pot) # r_pitch_det
@@ -50,4 +50,6 @@ empirical = plot_contour_pot(det)
 
 
 ps = plot(bifur_dia, analytic, empirical, layout = (1,3), size=(1500,500))
-savefig("test/plots/empirical_vs_analytic_det.pdf")
+
+
+#savefig("test/plots/pot_vs_quasi.pdf")

@@ -4,7 +4,7 @@ bifur_type = "transcritical"
 test_list_alpha, test_list_sigma = Array(range(-5, stop = 5.0, length = 9)), Array(range(0., stop = 2., length = 4))
 tspan = (0.0, 2.0)
 timepoints = 0.2:0.2:2.0
-initpoints = range(-5., stop = 5.0, length = 10)
+initpoints = range(-6., stop = 6.0, length = 10)
 npoints = 20
 test_prob_arg_list = [f_transcritical, g_multiplicative_noise, tspan, initpoints, timepoints, npoints]
 @time rep_output_raw, rep_output_potential  = rep_solve(test_prob_arg_list, test_list_alpha, test_list_sigma) #first dim is alpha, second dim is sigma

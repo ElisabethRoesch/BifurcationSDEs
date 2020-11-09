@@ -22,7 +22,7 @@ rep_output_pots = [load_pot(file_path_pots[i]) for i in 1:length(file_path_pots)
 # file_path_plots = [get_file_path_plot_pot(bifur_types[i]) for i in 1:n_bifurs]
 
 
-file_path_plots = ["test/server_tests/anissa_test/visualisation_precision/1.pdf", "test/server_tests/anissa_test/visualisation_precision/2.pdf", "test/server_tests/anissa_test/visualisation_precision/3.pdf", "test/server_tests/anissa_test/visualisation_precision/4.pdf"]
+file_path_plots = ["test/server_tests/anissa_test/visualisation_precision/1_multi_alpha.pdf", "test/server_tests/anissa_test/visualisation_precision/2_multi_alpha.pdf", "test/server_tests/anissa_test/visualisation_precision/3_multi_alpha.pdf", "test/server_tests/anissa_test/visualisation_precision/4_multi_alpha.pdf"]
 
 ps = plot_multi_contour_pot(rep_output_pots)
 
