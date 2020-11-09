@@ -3,13 +3,13 @@ include("src/includes.jl")
 bifur_type = "supercritical_pitchfork"
 file_path_raw = string("plots1/data/rerun_longer_time_span/rep_output_", bifur_type, "_raw_rerun_more_inits.jld")
 file_path_potential = string("plots1/data/rerun_longer_time_span/rep_output_", bifur_type, "_potential_rerun_more_inits.jld")
-test_list_alpha, test_list_sigma = Array(range(-15., stop = 15.0, length = 9)), Array(range(-0., stop = 2.0, length = 4))
+test_list_alpha, test_list_sigma = Array(range(-15., stop = 15.0, length = 100)), Array(range(-0., stop = 2.0, length = 4))
 
 
 # Next lines only for rerun.
 tspan = (0.0, 20.0)
 timepoints = 2.:2.:20.0
-initpoints = range(-5., stop = 5.0, length = 100)
+initpoints = range(-5., stop = 5.0, length = 10)
 npoints = 200
 test_prob_arg_list = [f_supercritical_pitchfork, g_multiplicative_noise, tspan, initpoints, timepoints, npoints]
 @time rep_output_raw, rep_output_potential = rep_solve(test_prob_arg_list, test_list_alpha, test_list_sigma) #first dim is alpha, second dim is sigma
