@@ -132,11 +132,11 @@ function plot_P_vectors(P_res, test_list_sigma, test_list_alpha)
     return p1, p2
 end
 
-function plot_summary_stat(summ_stat, test_list_alpha, test_list_sigma, cols, alphas_col)
+function plot_summary_stat(summ_stat, test_list_alpha, test_list_sigma, cols, alphas_col, ylim_upper)
     ps = []
     ann_cols = [:black, "#920005","#920005","#920005"]
     for i in 1:length(test_list_sigma)
-        p_temp = plot(grid = "off", ylab = "", ylim = (0.,5), size = (500, 1500), palette = :default, xlab = "",  axis = nothing)
+        p_temp = plot(grid = "off", ylab = "", ylim = (0.,ylim_upper), size = (500, 1500), palette = :default, xlab = "",  axis = nothing)
         plot!(test_list_alpha, summ_stat[:,i], label = "", color = cols[i], alpha = alphas_col[i])
         scatter!(test_list_alpha, summ_stat[:,i], label = "", color = cols[i], alpha = alphas_col[i])
         plot!([0.000000000000001,0], [0,summ_stat[Int(round(length(test_list_alpha)/2) + 1), i]], color = cols[i], alpha = alphas_col[i], label = "")

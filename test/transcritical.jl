@@ -7,11 +7,11 @@ timepoints = 0.2:0.2:2.0
 initpoints = range(-6., stop = 6.0, length = 10)
 npoints = 20
 test_prob_arg_list = [f_transcritical, g_multiplicative_noise, tspan, initpoints, timepoints, npoints]
-@time rep_output_raw, rep_output_potential  = rep_solve(test_prob_arg_list, test_list_alpha, test_list_sigma) #first dim is alpha, second dim is sigma
+# @time rep_output_raw, rep_output_potential  = rep_solve(test_prob_arg_list, test_list_alpha, test_list_sigma) #first dim is alpha, second dim is sigma
 file_path_raw = string("test/data/rep_output_", bifur_type, "_raw.jld")
 file_path_potential = string("test/data/rep_output_", bifur_type, "_potential.jld")
-save(file_path_raw, "rep_output_raw", rep_output_raw)
-save(file_path_potential, "rep_output_potential", rep_output_potential)
+# save(file_path_raw, "rep_output_raw", rep_output_raw)
+# save(file_path_potential, "rep_output_potential", rep_output_potential)
 
 # Or load data:
 rep_output_raw = load(file_path_raw)["rep_output_raw"]
@@ -20,6 +20,14 @@ rep_output_potential = load(file_path_potential)["rep_output_potential"]
 # Visualise:
 cols = ["#696969", "#920005", "#920005", "#920005"]
 alphas_col = [1.,.4,.6,1.]
+
+E_res = Entropy_vectors(rep_output_raw)
+ps_test = plot_summary_stat(E_res, test_list_alpha, test_list_sigma, cols, alphas_col, 2.5)
+    p_all = plot(ps_test... , layout = (4, 1))
+    savefig(string("test/plots/", bifur_type, "_entropy_single_data_summ_stat_plot_test.pdf"))
+
+
+
 ps_potential = plot_potentials(rep_output_potential, test_list_alpha, test_list_sigma, 1, length(test_list_alpha), 1, 4, cols, alphas_col)
     p_app = plot(ps_potential..., layout = (length(test_list_sigma),length(test_list_alpha)))
     savefig(string("test/plots/", bifur_type, "_summary_plot_2_potential.pdf"))
