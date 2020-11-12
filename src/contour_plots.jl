@@ -28,7 +28,8 @@ function plot_contourf_entropy(E, test_list_alpha, test_list_sigma)
         ind_y = findfirst(s -> s == sigma, test_list_sigma)
         return E[ind_x, ind_y]
     end
-    cf_e = contourf(test_list_alpha, test_list_sigma, f, legend = false, size = (500, 500), xlabel = "α", ylabel = "σ")
+    cc = cgrad(["#011f4b", "#005b96", "#b3cde0"], [0.1, 0.3, 0.8])
+    cf_e = contourf(test_list_alpha, test_list_sigma, f, color = cc,  size = (500, 500), xlabel = "α", ylabel = "σ")
     return cf_e
 end
 function plot_multi_contourf_entropy(Es, test_list_alphas, test_list_sigmas)

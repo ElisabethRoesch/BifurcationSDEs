@@ -154,15 +154,55 @@ function plot_large_scale(summ_stat, test_list_alpha, test_list_sigma)
     return p
 end
 
-function plot_large_scale_all_sum_stats(sum_stats, test_list_alpha, test_list_sigma, labels)
-    cols = [:blue, :green, :orange, :red]
-    p = plot(grid = "off", ylab = "Summary statistic (α = 0)", size = (500, 1000), palette = :default, xlab = "σ")
-    for i in 1:length(sum_stats)
-        plot!(test_list_sigma, sum_stats[i][1,:], color =cols[i], label = labels[i])
-        scatter!(test_list_sigma, sum_stats[i][1,:],color =cols[i],  label = "")
+function plot_large_scale_multi(summ_stats, test_list_alpha, test_list_sigma, bifur_type)
+    neg = summ_stats[1]
+    zero = summ_stats[2]
+    pos = summ_stats[3]
+    n = test_list_alpha[1]
+    z = test_list_alpha[2]
+    p = test_list_alpha[3]
+    cols = ["#011f4b", "#005b96", "#b3cde0"]
+    plt = plot(grid = "off", ylab = "H(σ)", size = (500, 500), palette = :default, xlab = "σ")
+    if bifur_type == "supercritical_pitchfork"
+        plot!(test_list_sigma, pos[1,:], color = cols[3], fill=(0,0.5,cols[3]), label = "α = $p")
+        scatter!(test_list_sigma, pos[1,:], color = cols[3], label = "")
+        plot!(test_list_sigma, zero[1,:], color = cols[2], fill=(0,0.5,cols[2]), label = "α = $z")
+        scatter!(test_list_sigma, zero[1,:], color = cols[2], label = "")
+        plot!(test_list_sigma, neg[1,:], color = cols[1],  fill=(0,0.5,cols[1]), label = "α = $n")
+        scatter!(test_list_sigma, neg[1,:], color = cols[1], label = "")
+
     end
-    return p
+    if bifur_type == "saddle_node"
+        cols = ["#b3cde0", "#005b96", "#011f4b"]
+        plot!(test_list_sigma, neg[1,:], color = cols[1],  fill=(0,0.5,cols[1]), label = "α = $n")
+        scatter!(test_list_sigma, neg[1,:], color = cols[1], label = "")
+        plot!(test_list_sigma, zero[1,:], color = cols[2], fill=(0,0.5,cols[2]), label = "α = $z")
+        scatter!(test_list_sigma, zero[1,:], color = cols[2], label = "")
+        plot!(test_list_sigma, pos[1,:], color = cols[3], fill=(0,0.5,cols[3]), label = "α = $p")
+        scatter!(test_list_sigma, pos[1,:], color = cols[3], label = "")
+    end
+    if bifur_type == "transcritical"
+        cols = [ "#011f4b", "#005b96", "#b3cde0"]
+        plot!(test_list_sigma, pos[1,:], color = cols[3], fill=(0,0.5,cols[3]), label = "α = $p")
+        scatter!(test_list_sigma, pos[1,:], color = cols[3], label = "")
+        plot!(test_list_sigma, zero[1,:], color = cols[2], fill=(0,0.5,cols[2]), label = "α = $z")
+        scatter!(test_list_sigma, zero[1,:], color = cols[2], label = "")
+        plot!(test_list_sigma, neg[1,:], color = cols[1],  fill=(0,0.5,cols[1]), label = "α = $n")
+        scatter!(test_list_sigma, neg[1,:], color = cols[1], label = "")
+
+    end
+    return plt
 end
+
+# function plot_large_scale_all_sum_stats(sum_stats, test_list_alpha, test_list_sigma, labels)
+#     cols = [:blue, :green, :orange, :red]
+#     p = plot(grid = "off", ylab = "Summary statistic (α = 0)", size = (500, 1000), palette = :default, xlab = "σ")
+#     for i in 1:length(sum_stats)
+#         plot!(test_list_sigma, sum_stats[i][1,:], color =cols[i], label = labels[i])
+#         scatter!(test_list_sigma, sum_stats[i][1,:],color =cols[i],  label = "")
+#     end
+#     return p
+# end|
 
 function workflow_time_one_sig_one_alpha(rep_output_raw, ind_alpha, ind_sigma)
         p_ode_time = plot(grid = "off", xlab = "", ylab = "", label ="")
