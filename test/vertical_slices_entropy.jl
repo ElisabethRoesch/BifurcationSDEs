@@ -56,5 +56,5 @@ multi_p_supercritical_pitchfork = plot_large_scale_multi(E_res_multi, alphas, te
 # savefig(multi_p_supercritical_pitchfork, string("test/plots/large_scale_sigma/", bifur_type,"_vertical_slice_entropy_z_p_n.pdf"))
 
 
-ps = plot(multi_p_supercritical_pitchfork,multi_p_saddle_node,multi_p_transcritical, layout = (1,3), size=(1500,500))
+ps = plot(multi_p_supercritical_pitchfork,multi_p_transcritical, multi_p_saddle_node,layout = (1,3), size=(1500,500))
 savefig(ps, string("test/plots/large_scale_sigma/all_bifurs_vertical_slice_entropy_n_z_p2.pdf"))
