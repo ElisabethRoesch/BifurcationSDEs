@@ -21,6 +21,8 @@ rep_output_potential = load(file_path_potential)["rep_output_potential"]
 cols = ["#696969", "#920005", "#920005", "#920005"]
 alphas_col = [1.,.4,.6,1.]
 
+# PLOT zeros values
+print(E_res[5,:])
 E_res = Entropy_vectors(rep_output_raw)
 ps_test = plot_summary_stat(E_res, test_list_alpha, test_list_sigma, cols, alphas_col, 0.75)
     p_all = plot(ps_test... , layout = (4, 1))
@@ -30,16 +32,16 @@ ps_test = plot_summary_stat(E_res, test_list_alpha, test_list_sigma, cols, alpha
 
 ps_potential = plot_potentials(rep_output_potential, test_list_alpha, test_list_sigma, 1, length(test_list_alpha), 1, 4, cols, alphas_col)
     p_app = plot(ps_potential..., layout = (length(test_list_sigma),length(test_list_alpha)))
-    savefig(string("test/plots/", bifur_type, "_summary_plot_2_potential.pdf"))
+    savefig(string("test/plots/", bifur_type, "_summary_plot_2_potentialtt.pdf"))
 
 ps_raw = plot_raw_data(rep_output_raw, test_list_alpha, test_list_sigma, 1, length(test_list_alpha), 1, 4, cols, alphas_col)
     p_app = plot(ps_raw..., layout = (length(test_list_sigma),length(test_list_alpha)))
-    savefig(string("test/plots/", bifur_type, "_summary_plot_2_raw.pdf"))
+    savefig(string("test/plots/", bifur_type, "_summary_plot_2_rawtt.pdf"))
 
 ps = plot_potential_unstable(rep_output_raw, test_list_alpha, test_list_sigma, 1,
     length(test_list_alpha), 1, length(test_list_sigma), cols, alphas_col, (-5,5), -100)
     p_app = plot(ps..., layout = ( length(test_list_sigma), length(test_list_alpha)))
-    savefig(string("test/plots/", bifur_type, "_summary_plot_unstable.pdf"))
+    savefig(string("test/plots/", bifur_type, "_summary_plot_unstablett.pdf"))
 
 KS_res = KS_vectors(rep_output_raw)
 p = plot_KS_vectors(KS_res, test_list_sigma, test_list_alpha)

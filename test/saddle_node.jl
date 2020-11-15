@@ -20,6 +20,8 @@ cols = ["#696969", "#920005", "#920005", "#920005"]
 alphas_col = [1.,.4,.6,1.]
 
 E_res = Entropy_vectors(rep_output_raw)
+# PLOT zeros values
+print(E_res[5,:])
 ps_test = plot_summary_stat(E_res, test_list_alpha, test_list_sigma, cols, alphas_col, 1.)
     p_all = plot(ps_test... , layout = (4, 1))
     savefig(string("test/plots/", bifur_type, "_entropy_single_data_summ_stat_plot_test.pdf"))
