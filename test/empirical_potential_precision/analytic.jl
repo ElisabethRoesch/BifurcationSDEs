@@ -30,8 +30,7 @@ end
 ns = Array(range(-5, stop = 5, length =10))
 cc = cgrad(["#32343e", "#446b6a", "#5ba95d"], [0.1, 0.3, 0.8])
 analytic = contourf(alphas, ns, f, xlab = "α", ylab = "X", ylim = (-5,5), color = cc, grid = "off")
-
-
+savefig("test/plots/pot_analytic.pdf")
 
 file_path = "test/server_tests/anissa_test/plots1/data/rerun_longer_time_span/rep_output_supercritical_pitchfork_potential_rerun_more_inits.jld"
 pot = load(file_path)["rep_output_potential"]
@@ -45,14 +44,14 @@ function plot_contour_pot(pot) # r_pitch_det
         return pot[a][b]
     end
     cc = cgrad(["#32343e", "#446b6a", "#5ba95d"], [0.1, 0.3, 0.8])
-    cf_pot = contourf(as, bs, f, xlabel = "α", levels = 100, color = cc, ylabel = "X", grid = "off")
+    cf_pot = contourf(as, bs, f, xlabel = "α", levels = 10, color = cc, ylabel = "X", grid = "off")
     # aaa = hcat(det...)'
     # cf_pot = contourf(aaa, levels = 30)
     # heatmap(aaa)
     return cf_pot
 end
 empirical = plot_contour_pot(det)
-
+savefig("test/plots/quasi_pot_emp.pdf")
 ps = plot(bifur_dia, analytic, empirical, layout = (1, 3), size = (1500, 500))
 
 
