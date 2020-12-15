@@ -4,7 +4,7 @@ bifur_type = "supercritical_pitchfork"
 file_path_raw = string("plots1/data/rerun_longer_time_span/rep_output_", bifur_type, "_raw_rerun_more_inits.jld")
 file_path_potential = string("plots1/data/rerun_longer_time_span/rep_output_", bifur_type, "_potential_rerun_more_inits.jld")
 test_list_alpha, test_list_sigma = Array(range(-15., stop = 15.0, length = 9)), Array(range(-0., stop = 2.0, length = 4))
-
+print(Array(range(-15., stop = 15.0, length = 9)))
 
 # Next lines only for rerun.
 tspan = (0.0, 20.0)
