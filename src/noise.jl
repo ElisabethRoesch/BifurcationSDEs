@@ -1,3 +1,4 @@
+# TO DO rename functions so we can implement several multiplicative noises
 function g_multiplicative_noise(x, p, t) # noiseeq
     dx = p[2]*x[1]
     return [dx]
