@@ -6,10 +6,12 @@ test_list_alpha, test_list_sigma = Array(range(-5, stop = 5.0, length = 9)), Arr
 # to run
 tspan = (0.0, 2.0)
 timepoints = 0.2:0.2:2.0
-initpoints = range(-10, stop = 10, length = 10)
+initpoints = [range(-10, stop = 10, length = 10), range(-10, stop = 10, length = 10)]
 npoints = 20
-test_prob_arg_list = [f_transcritical, g_multiplicative_noise, tspan, initpoints, timepoints, npoints]
+test_prob_arg_list = [f_2d, g_2d, tspan, initpoints, timepoints, npoints]
+# to do: implement rep_solve for multidim
 @time rep_output_raw, rep_output_potential  = rep_solve(test_prob_arg_list, test_list_alpha, test_list_sigma) #first dim is alpha, second dim is sigma
+
 file_path_raw = string("test/data/rep_output_", bifur_type, "_raw.jld")
 file_path_potential = string("test/data/rep_output_", bifur_type, "_potential.jld")
 save(file_path_raw, "rep_output_raw", rep_output_raw)
