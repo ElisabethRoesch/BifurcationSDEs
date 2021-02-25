@@ -26,3 +26,29 @@ function rep_solve(prob_arg_list, list_alpha, list_sigma)
     end
     return output_raw, output_potential
 end
+
+
+# example input:
+# prob_arg_list = test_prob_arg_list
+# test_p = [0.5, 0.25, -0.05, 0.5, 0.4]
+
+function solve_prob_multi_d(prob_arg_list, p_arg) # More efficient version
+    temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
+    temp_p = test_p
+    n_states = length(initpoints)
+    temp_outputs = [Float64[]  for j in 1:n_states]
+    for i in 1:length(initpoints)
+            x0 = [initpoints[i][j] for j in 1:n_states]
+            temp_prob = SDEProblem(temp_f, temp_g, x0, temp_tspan, temp_p)
+            for j in 1:npoints
+                nsol = Array(solve(temp_prob, saveat = timepoints))
+                for state in 1:n_states
+                    append!(temp_outputs[state], nsol[state,:])
+                end
+            end
+    end
+    kde_t = kde((temp_outputs[1],temp_outputs[2]))
+    potential = -log.(pdf(kde_t, -5.0:0.01:5.0, -5.0:0.01:5.0).+1)
+
+    return temp_outputs, potential
+end
