@@ -131,6 +131,8 @@ len = length(temp_outputs[1])
 in = Array{Float64,2}(undef, 2, len)
 in[1,:] = temp_outputs[1]
 in[2,:] = temp_outputs[2]
+size(in)
+
 pdf2 = kde!(in)
 r1 = [-5.0:0.01:5.0;]
 r2 = [-5.0:0.01:5.0;]

@@ -129,8 +129,9 @@ function solve_prob_3d_new(prob_arg_list, p_arg)
     for i in 1:n
         for j in  1:m
             for k in  1:o
-            v = [r1[i],r2[j],r3[k]]
-            vs[:,(i-1)*n+(j-1)*m+j] = v
+                v = [r1[i],r2[j],r3[k]]
+                vs[:,(i-1)*n+(j-1)*m+j] = v
+            end
         end
     end
     pdfs = pdf2(vs)
