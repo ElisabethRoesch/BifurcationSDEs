@@ -37,7 +37,15 @@ function g_nd_multiplicative_v3(x, p, t) # 1D: g(x) = sigma*(1 + x^2) (Coomer et
     return dx
 end
 
-g_nd_additive([1,2,3], [0.1], "")
-g_nd_multiplicative_v2([1,2,3], [0.1], "")
-g_nd_multiplicative_v1([1,2,3], [0.1], "")
-g_nd_multiplicative_v3([1.,2,3], [0.1], "")
+function g_nd_multiplicative_v4(x, p, t) # 1D: g(x) =
+    sigma = p[1]
+    dx = [ XXX for x_temp in x]
+    return dx
+end
+
+
+# Test equations:
+# g_nd_additive([1,2,3], [0.1], "")
+# g_nd_multiplicative_v2([1,2,3], [0.1], "")
+# g_nd_multiplicative_v1([1,2,3], [0.1], "")
+# g_nd_multiplicative_v3([1.,2,3], [0.1], "")

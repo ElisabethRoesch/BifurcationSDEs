@@ -26,7 +26,7 @@ test_p = [0.5, 0.25, -0.4, 0.5, sigma_low] # alpha, lambda, beta, c, sigma
 temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
 a,b = solve_prob_2d_new(test_prob_arg_list, test_p)
 # p_low_1 = contourf(b, title = "beta = -0.4",xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
-p_low_1 = contourf(b,  clims = (-10,0), legend = :none, xticks =([0:250:1000;], ["0", "0.25", "0.5","0.75","1.0"]),yticks =([0:250:1000;], ["0", "0.25", "0.5","0.75","1.0"]))
+p_low_1 = contourf(b,  clims = (-10,0), legend = :none, xticks = ([0:250:1000;], ["0", "0.25", "0.5","0.75","1.0"]),yticks =([0:250:1000;], ["0", "0.25", "0.5","0.75","1.0"]))
 # Setting 2:
 prob_arg_list = test_prob_arg_list
 test_p = [0.5, 0.25, 0.0, 0.5, sigma_low]
