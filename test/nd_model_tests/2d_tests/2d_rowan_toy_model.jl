@@ -1,4 +1,4 @@
-
+# Goal: reporduce Rowans results. @D toy example with additive noise
 include("../../../src/includes.jl")
 setForceEvalDirect!(false) # needed for speed up for kde
 
@@ -8,25 +8,34 @@ tspan = (0.0, 10.0) # span of sde solve
 timepoints = 0.2:0.2:10.0 # poistions of data point selected from SDE solve
 len = 10
 # TO DO: how to set inits?
-initpoints = [Array(range(0, stop = 1, length = len)), Array(range(0, stop = 1, length = len))]
-npoints = 20 # this is number of SDEs
+initpoints = [Array(range(-2, stop = 2, length = len)), Array(range(-2, stop = 2, length = len))]
+npoints = 10 # this is number of SDEs
 # TO DO: how to set kde_grid?
-kde_grid = [0.25:0.005:.75, 0.25:0.005:.75]
-test_prob_arg_list = [f_2d_rowan_toy, g_2d_rowan_toy_CLE, tspan, initpoints, timepoints, npoints, kde_grid]
-
-kde_grid_arr_start = Array(kde_grid[1])[1]
-kde_grid_arr_end = Array(kde_grid[2])[end]
+kde_grid = [-2:0.2:2, -2:0.2:2]
+test_prob_arg_list = [f_2d_rowan_toy, g_nd_additive, tspan, initpoints, timepoints, npoints, kde_grid]
 
 
 # EXAMPLE 1: Three settings (three different values for beta) for LOW noise (sigma = 0.2)
 # Setting 1:
-sigma_low = 0.2
-prob_arg_list = test_prob_arg_list
-test_p = [0.5, 0.25, -0.4, 0.5, sigma_low] # alpha, lambda, beta, c, sigma
-temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
+sigma_low = 0.4
+test_p = [0.5, 0.25, -0.05, 0.5, sigma_low] # alpha, lambda, beta, c, sigma
+
+
+
+# plot SDE solve
+u0 = [initpoints[1][10], initpoints[2][10]]
+temp_prob = ODEProblem(f_2d_rowan_toy, u0, tspan, test_p)
+nsol = solve(temp_prob)
+plot(nsol)
+
+
 a,b = solve_prob_2d_new(test_prob_arg_list, test_p)
 # p_low_1 = contourf(b, title = "beta = -0.4",xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
-p_low_1 = contourf(b,  clims = (-10,0), legend = :none, xticks = ([0:250:1000;], ["0", "0.25", "0.5","0.75","1.0"]), yticks = ([0:250:1000;], ["0", "0.25", "0.5","0.75","1.0"]))
+p_low_1 = contourf(b, size = (500,500))
+
+
+
+
 # Setting 2:
 prob_arg_list = test_prob_arg_list
 test_p = [0.5, 0.25, 0.0, 0.5, sigma_low]

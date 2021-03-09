@@ -60,4 +60,4 @@ end
 # g_nd_multiplicative_v2([1,2,3], [0.1], "")
 # g_nd_multiplicative_v1([1,2,3], [0.1], "")
 # g_nd_multiplicative_v3([1.,2,3], [0.1], "")
-g_2d_rowan_toy_CLE([1.,2,3], [0.1,0.1,0.1,0.1,0.1], "")
+g_2d_rowan_toy_CLE([1., 2, 3], [0.1, 0.1, 0.1, 0.1, 0.1], "")

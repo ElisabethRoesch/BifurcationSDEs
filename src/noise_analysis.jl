@@ -53,7 +53,7 @@ function solve_prob_2d_old(prob_arg_list, p_arg)
 end
 
 function solve_prob_2d_new(prob_arg_list, p_arg)
-    temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
+    temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints, kde_grid = prob_arg_list
     temp_p = test_p
     n_states = length(initpoints)
     temp_outputs = [Float64[]  for j in 1:n_states]
@@ -75,8 +75,8 @@ function solve_prob_2d_new(prob_arg_list, p_arg)
     print("size(in)  ", size(in))
     pdf2 = KernelDensityEstimate.kde!(in)
     print("this is after kde")
-    r1 = [-5.0:0.01:5.0;]
-    r2 = [-5.0:0.01:5.0;]
+    r1 = kde_grid[1]
+    r2 = kde_grid[2]
     d = 2
     vs = Matrix{Float64}(undef, d, length(r1)*length(r2))
     n,m = length(r1), length(r2)
