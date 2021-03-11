@@ -1,18 +1,24 @@
 function f_2d_rowan_toy(dx,x,p,t) #p = [α, λ, β, c, σ]
-    alpha = p[1]
-    lamda = p[2]
-    beta = p[3]
+    # alpha = p[1]
+    # lamda = p[2]
+    # beta = p[3]
+    # c = p[4]
+    # sigma = p[5]
+    α = p[1]
+    λ = p[2]
+    β = p[3]
     c = p[4]
-    sigma = p[5]
+    dx[1] = 2α*x[1] - 4λ*x[1]^3 - β + 4c*λ*x[2]^3
+    dx[2] = 2c*α*x[1] - 4c*λ*x[1]^3 - c*β - 4λ*x[2]^3
 
-    dx[1] = 2*alpha*x[1]
-        -4*lamda*x[1]^3
-        -beta
-        +4*c*lamda*x[2]^3
-    dx[2] = 2*c*alpha*x[1]
-        -4*c*lamda*x[1]^3
-        -c*beta
-        -4*lamda*x[2]^3
+    # dx[1] = 2*alpha*x[1]
+    #     -4*lamda*x[1]^3
+    #     -beta
+    #     +4*c*lamda*x[2]^3
+    # dx[2] = 2*c*alpha*x[1]
+    #     -4*c*lamda*x[1]^3
+    #     -c*beta
+    #     -4*lamda*x[2]^3
 
     # dx[1] = 4*lamda*x[2]^3
     # dx[2] = 2*alpha*x[1]
