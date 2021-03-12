@@ -47,6 +47,12 @@ function Entropy_vectors(rep_output) #calculate entropy value for each rep_outpu
     return resE
 end
 
+
+function entropy_of_matrix(rep_output) #calculate entropy value for a matrix
+    return get_entropy(rep_output...)
+end
+
+
 function pairwise_ent(rep_output) #calculate the pairwise entropy between rep_outputs for each alpha from sigma n to sigma n+1.
     resP = Array{Float64}(undef, size(rep_output)[1], size(rep_output)[2])
     for i in 1:size(rep_output)[1]
