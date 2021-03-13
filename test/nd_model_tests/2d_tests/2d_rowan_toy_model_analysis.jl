@@ -25,7 +25,41 @@ end
 
 #####
 # Entropy via InformationMeasures.jl
-using InformationMeasures
+using InformationMeasures, Plots
+
+set[1,1][2][1,]
+
+q_e_s = Matrix(undef, size(keys)[1], size(keys)[2])
+q_e_s2 = Matrix(undef, size(keys)[1], size(keys)[2])
+
+for i in 1:size(keys)[1]
+    for j in 1:size(keys)[2]
+        res = Array{Float64}(undef,41)
+        res2 = Array{Float64}(undef,41)
+
+        for k in 1:41
+            temp_b = set[i,j][2]
+            print(size(temp_b[k,:]))
+            res[k] = get_entropy(temp_b[k,:]) # entropy col wise of potential
+            res2[k] = get_entropy(temp_b[:,k]) # entropy col wise of potential
+
+        end
+        q_e_s[i,j] = res
+        q_e_s2[i,j] = res2
+
+    end
+end
+ps = []
+for i in 1:3
+    for j in 1:3
+        p = plot(q_e_s[i,j])
+        push!(ps, p)
+    end
+end
+plot(ps..., layout = (3,3))
+p_q_e_s = contourf(q_e_s)
+
+
 p_1 = [1,2,3.3]
 p_2 = [0 0 0;
         4 5 6.3]
