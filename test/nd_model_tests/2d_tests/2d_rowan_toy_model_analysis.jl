@@ -11,7 +11,7 @@ function get_files(key)
     # file_path_raw = string("test/nd_model_tests/2d_tests/data/rep_output_", key, "_raw.jld")
     # file_path_potential = string("test/nd_model_tests/2d_tests/data/rep_output_", key, "_potential.jld")
     file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_raw.jld")
-    file_path_potential = string("test/nd_model_tests/2d_tests/data/rep_output_", key, "_potential.jld")
+    file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
     rep_output_raw = load(file_path_raw)[key]
     rep_output_potential = load(file_path_potential)[key]
     return rep_output_raw, rep_output_potential
@@ -59,9 +59,9 @@ for i in 1:3
     end
 end
 plot(ps..., layout = (3,3))
-savefig("entropy_colwise1.pdf")
+savefig("entropy_colwise1_CLE.pdf")
 plot(ps2..., layout = (3,3))
-savefig("entropy_colwise2.pdf")
+savefig("entropy_colwise2_CLE.pdf")
 
 
 p_q_e_s = contourf(q_e_s)
