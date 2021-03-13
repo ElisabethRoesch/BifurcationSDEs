@@ -1,4 +1,5 @@
-# Goal: reporduce Rowans results. @D toy example with additive noise
+# Goal: 2D toy example with CLE noise.
+# compared to additive noise example: kde grid 0.01 statt 0.1 and noise levels lower 0.01, 0.1, 0.2 instead of 0.2, 0.4, 0.8.
 include("../../../src/includes.jl")
 setForceEvalDirect!(false) # needed for speed up for kde
 
@@ -11,7 +12,7 @@ len = 10 # number inits
 initpoints = [Array(range(-2, stop = 2, length = len)), Array(range(-2, stop = 2, length = len))]
 npoints = 1000 # this is number of SDEs
 # TO DO: how to set kde_grid?
-kde_grid = [-2:0.1:2, -2:0.1:2]
+kde_grid = [-2:0.01:2, -2:0.01:2]
 test_prob_arg_list = [f_2d_rowan_toy, g_2d_rowan_toy_CLE, tspan, initpoints, timepoints, npoints, kde_grid]
 
 
@@ -25,6 +26,7 @@ file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_",key, 
 file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
 save(file_path_raw, key, a)
 save(file_path_potential, key, b)
+
 
 # p_low_1 = contourf(b, title = "beta = -0.4",xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
 p_low_1 = contourf(b, size = (500, 500))
@@ -62,7 +64,7 @@ plot(p_low_1, p_low_2, p_low_3, layout = (1, 3), size = (1500, 500))
 # EXAMPLE 2: Three settings (three different values for beta) for MEDIUM noise (sigma = 0.4)
 # Setting 1:
 key =  "2_1"
-sigma_medium = 0.1
+sigma_medium = 0.05
 prob_arg_list = test_prob_arg_list
 test_p = [0.5, 0.25, -0.4, 0.5, sigma_medium] # alpha, lambda, beta, c, sigma
 temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
@@ -112,7 +114,7 @@ plot(p_medium_1, p_medium_2, p_medium_3)
 # EXAMPLE 3: Three settings (three different values for beta) for HIGH noise (sigma = 0.8)
 # Setting 1:
 key =  "3_1"
-sigma_high = 0.2
+sigma_high = 0.1
 prob_arg_list = test_prob_arg_list
 test_p = [0.5, 0.25, -0.4, 0.5, sigma_high] # alpha, lambda, beta, c, sigma
 temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list

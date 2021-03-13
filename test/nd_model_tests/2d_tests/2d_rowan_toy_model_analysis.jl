@@ -30,13 +30,13 @@ set[1,1][2][1,]
 
 q_e_s = Matrix(undef, size(keys)[1], size(keys)[2])
 q_e_s2 = Matrix(undef, size(keys)[1], size(keys)[2])
-
+len = size(set[1,1][2])[1]
 for i in 1:size(keys)[1]
     for j in 1:size(keys)[2]
-        res = Array{Float64}(undef,41)
-        res2 = Array{Float64}(undef,41)
+        res = Array{Float64}(undef,len)
+        res2 = Array{Float64}(undef,len)
 
-        for k in 1:41
+        for k in 1:len
             temp_b = set[i,j][2]
             res[k] = get_entropy(temp_b[k,:]) # entropy col wise of potential
             res2[k] = get_entropy(temp_b[:,k]) # entropy col wise of potential
