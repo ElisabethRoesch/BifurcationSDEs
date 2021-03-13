@@ -19,9 +19,6 @@ for i in 1:size(keys)[1]
         set[i,j] = get_files(keys[i,j])
     end
 end
-#####
-
-
 
 #####
 # Entropy via InformationMeasures.jl
@@ -50,13 +47,22 @@ for i in 1:size(keys)[1]
     end
 end
 ps = []
+ps2 = []
+
 for i in 1:3
     for j in 1:3
         p = plot(q_e_s[i,j])
+        p2 = plot(q_e_s2[i,j])
         push!(ps, p)
+        push!(ps2, p2)
     end
 end
 plot(ps..., layout = (3,3))
+savefig("entropy_colwise1.pdf")
+plot(ps2..., layout = (3,3))
+savefig("entropy_colwise2.pdf")
+
+
 p_q_e_s = contourf(q_e_s)
 
 
