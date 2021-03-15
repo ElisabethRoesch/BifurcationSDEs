@@ -22,8 +22,8 @@ sigma_low = 0.01
 key =  "1_1"
 test_p = [0.5, 0.25, -0.4, 0.5, sigma_low] # alpha, lambda, beta, c, sigma
 a,b = solve_prob_2d_new(test_prob_arg_list, test_p)
-file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_",key, "_raw.jld")
-file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
+file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_",key, "_raw.jld")
+file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_", key, "_potential.jld")
 save(file_path_raw, key, a)
 save(file_path_potential, key, b)
 
@@ -36,8 +36,8 @@ prob_arg_list = test_prob_arg_list
 test_p = [0.5, 0.25, 0.0, 0.5, sigma_low]
 temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
 a,b = solve_prob_2d_new(test_prob_arg_list, test_p)
-file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_",key, "_raw.jld")
-file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
+file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_",key, "_raw.jld")
+file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_", key, "_potential.jld")
 save(file_path_raw, key, a)
 save(file_path_potential, key, b)
 # p_low_2 = contourf(b, title = "beta = 0.0", xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
@@ -49,8 +49,8 @@ prob_arg_list = test_prob_arg_list
 test_p = [0.5, 0.25, 0.4, 0.5, sigma_low]
 temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
 a,b = solve_prob_2d_new(test_prob_arg_list, test_p)
-file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_",key, "_raw.jld")
-file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
+file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_",key, "_raw.jld")
+file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_", key, "_potential.jld")
 save(file_path_raw, key, a)
 save(file_path_potential, key, b)
 # p_low_3 = contourf(b, title = "beta = 0.4", xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
@@ -69,8 +69,8 @@ prob_arg_list = test_prob_arg_list
 test_p = [0.5, 0.25, -0.4, 0.5, sigma_medium] # alpha, lambda, beta, c, sigma
 temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
 a,b = solve_prob_2d_new(test_prob_arg_list, test_p)
-file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_",key, "_raw.jld")
-file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
+file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_",key, "_raw.jld")
+file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_", key, "_potential.jld")
 save(file_path_raw, key, a)
 save(file_path_potential, key, b)
 # p_medium_1 = contourf(b, title = "beta = -0.4",xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
@@ -83,8 +83,8 @@ prob_arg_list = test_prob_arg_list
 test_p = [0.5, 0.25, 0.0, 0.5, sigma_medium]
 temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
 a,b = solve_prob_2d_new(test_prob_arg_list, test_p)
-file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_",key, "_raw.jld")
-file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
+file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_",key, "_raw.jld")
+file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_", key, "_potential.jld")
 save(file_path_raw, key, a)
 save(file_path_potential, key, b)
 # p_medium_2 = contourf(b, title = "beta = 0.0", xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
@@ -98,8 +98,8 @@ prob_arg_list = test_prob_arg_list
 test_p = [0.5, 0.25, 0.4, 0.5, sigma_medium]
 temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
 a,b = solve_prob_2d_new(test_prob_arg_list, test_p)
-file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_",key, "_raw.jld")
-file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
+file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_",key, "_raw.jld")
+file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_", key, "_potential.jld")
 save(file_path_raw, key, a)
 save(file_path_potential, key, b)
 # p_medium_3 = contourf(b, title = "beta = 0.4", xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
@@ -119,8 +119,8 @@ prob_arg_list = test_prob_arg_list
 test_p = [0.5, 0.25, -0.4, 0.5, sigma_high] # alpha, lambda, beta, c, sigma
 temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
 a,b = solve_prob_2d_new(test_prob_arg_list, test_p)
-file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_",key, "_raw.jld")
-file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
+file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_",key, "_raw.jld")
+file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_", key, "_potential.jld")
 save(file_path_raw, key, a)
 save(file_path_potential, key, b)
 # p_high_1 = contourf(b, title = "beta = -0.4",xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
@@ -133,8 +133,8 @@ prob_arg_list = test_prob_arg_list
 test_p = [0.5, 0.25, 0.0, 0.5, sigma_high]
 temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
 a,b = solve_prob_2d_new(test_prob_arg_list, test_p)
-file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_",key, "_raw.jld")
-file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
+file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_",key, "_raw.jld")
+file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_", key, "_potential.jld")
 save(file_path_raw, key, a)
 save(file_path_potential, key, b)
 # p_high_2 = contourf(b, title = "beta = 0.0", xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
@@ -148,8 +148,8 @@ prob_arg_list = test_prob_arg_list
 test_p = [0.5, 0.25, 0.4, 0.5, sigma_high]
 temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
 a,b = solve_prob_2d_new(test_prob_arg_list, test_p)
-file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_",key, "_raw.jld")
-file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
+file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_",key, "_raw.jld")
+file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE_11_IC/rep_output_", key, "_potential.jld")
 save(file_path_raw, key, a)
 save(file_path_potential, key, b)
 # p_high_3 = contourf(b, title = "beta = 0.4", xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
@@ -160,4 +160,4 @@ plot(p_high_1, p_high_2, p_high_3)
 
 plot(p_low_1, p_low_2, p_low_3, p_medium_1, p_medium_2, p_medium_3, p_high_1, p_high_2, p_high_3)
 
-savefig("CLE_three_noise_levels_three_beta_converge.pdf")
+savefig("CLE_three_noise_levels_three_beta_CLE_11_IC.pdf")
