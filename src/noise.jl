@@ -39,7 +39,22 @@ end
 # end
 
 
-function g_2d_rowan_toy_CLE(dx, x, p, t) # pos x : g(x) = sqrt(f(x))
+function g_2d_rowan_toy_root(dx, x, p, t) # pos x : g(x) = sqrt(f(x))
+    x1 = 2*p[1]*x[1]-4*p[2]*x[1]^3-p[3]+4*p[4]*p[2]*x[2]^3
+    x2 = 2*p[4]*p[1]*x[1]-4*p[4]*p[2]*x[1]^3-p[4]*p[3]+4*p[2]*x[2]^3
+    dx_f = [x1, x2]
+    sigma = p[end]
+    for i in 1:2
+        if dx_f[i] < 0
+            dx[i] = -sigma*sqrt(abs(dx_f[i]))
+        else
+            dx[i] = sigma*sqrt(dx_f[i])
+        end
+    end
+    return dx
+end
+
+function g_2d_rowan_toy_CLE(dx, x, p, t) # TO DO
     x1 = 2*p[1]*x[1]-4*p[2]*x[1]^3-p[3]+4*p[4]*p[2]*x[2]^3
     x2 = 2*p[4]*p[1]*x[1]-4*p[4]*p[2]*x[1]^3-p[4]*p[3]+4*p[2]*x[2]^3
     dx_f = [x1, x2]

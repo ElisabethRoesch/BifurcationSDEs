@@ -1,4 +1,5 @@
 # Goal: reporduce Rowans results. @D toy example with additive noise
+
 include("../../../src/includes.jl")
 setForceEvalDirect!(false) # needed for speed up for kde
 
