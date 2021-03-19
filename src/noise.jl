@@ -55,10 +55,21 @@ function g_2d_rowan_toy_root(dx, x, p, t) # pos x : g(x) = sqrt(f(x))
 end
 
 function g_2d_rowan_toy_CLE(dx, x, p, t) # TO DO
-    x1 = 2*p[1]*x[1]-4*p[2]*x[1]^3-p[3]+4*p[4]*p[2]*x[2]^3
-    x2 = 2*p[4]*p[1]*x[1]-4*p[4]*p[2]*x[1]^3-p[4]*p[3]+4*p[2]*x[2]^3
-    dx_f = [x1, x2]
-    sigma = p[end]
+
+    # propensities:
+    h1 = 2*p[1]*x[1]
+    h2 = 4*p[2]*x[1]^3
+    h3 = p[3]
+    h4 = 4*p[4]*p[2]*x[2]^3
+    h5 = 2*p[4]*p[1]*x[1]
+    h6 = 4*p[4]*p[2]*x[1]^3
+    h7 = p[4]*p[3]
+    h8 = 4*p[2]*x[2]^3
+    hs = [h1, h2, h3, h4;
+            h5, h6, h7, h8]
+    S = [1 -1 -1 1;
+        1, -1, -1, -1]
+    res = S*hs*S'
     for i in 1:2
         if dx_f[i] < 0
             dx[i] = -sigma*sqrt(abs(dx_f[i]))
