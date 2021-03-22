@@ -26,14 +26,11 @@ file_path_raw = string("test/nd_model_tests/2d_tests/data_additive_11_IC/rep_out
 file_path_potential = string("test/nd_model_tests/2d_tests/data_additive_11_IC/rep_output_", key, "_potential.jld")
 save(file_path_raw, key, a)
 save(file_path_potential, key, b)
-
 # p_low_1 = contourf(b, title = "beta = -0.4",xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
 p_low_1 = contourf(b, size = (500, 500))
 # Setting 2:
 key =  "1_2"
-prob_arg_list = test_prob_arg_list
-test_p = [0.5, 0.25, 0.0, 0.5, sigma_low]
-temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints = prob_arg_list
+test_p = [0.5, 0.25, 0.0, 0.5, sigma_low] # alpha, lambda, beta, c, sigma
 a,b = solve_prob_2d_new(test_prob_arg_list, test_p)
 file_path_raw = string("test/nd_model_tests/2d_tests/data_additive_11_IC/rep_output_",key, "_raw.jld")
 file_path_potential = string("test/nd_model_tests/2d_tests/data_additive_11_IC/rep_output_", key, "_potential.jld")
@@ -42,6 +39,7 @@ save(file_path_potential, key, b)
 # p_low_2 = contourf(b, title = "beta = 0.0", xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
 # p_low_2 = contourf(b,clims = (-10,0), legend = :none, xticks =([0:250:1000;], ["0", "0.25", "0.5","0.75","1.0"]), yticks = ([0:250:1000;], ["0", "0.25", "0.5","0.75","1.0"]))
 p_low_2 = contourf(b, size = (500, 500))
+scatter(a[1],a[2])
 # Setting 3:
 key =  "1_3"
 prob_arg_list = test_prob_arg_list
