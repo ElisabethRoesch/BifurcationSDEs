@@ -65,10 +65,9 @@ function g_2d_rowan_toy_CLE(dx, x, p, t) # TO DO
     h6 = 4*p[4]*p[2]*x[1]^3
     h7 = p[4]*p[3]
     h8 = 4*p[2]*x[2]^3
-    hs = [h1, h2, h3, h4;
-            h5, h6, h7, h8]
-    S = [1 -1 -1 1;
-        1, -1, -1, -1]
+    hs = [h1 h2 h3 h4;
+            h5 h6 h7 h8]
+    S = [1 -1 -1 1; 1 -1 -1 -1]
     res = S*hs*S'
     for i in 1:2
         if dx_f[i] < 0
@@ -79,7 +78,6 @@ function g_2d_rowan_toy_CLE(dx, x, p, t) # TO DO
     end
     return dx
 end
-
 
 # Test equations:
 # g_nd_additive([1,2,3], [0.1], "")
