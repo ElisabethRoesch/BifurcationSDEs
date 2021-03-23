@@ -73,21 +73,22 @@ function solve_prob_2d_new(prob_arg_list, p_arg)
     in[2,:] = temp_outputs[2]
     print("this is before kde")
     print("size(in)  ", size(in))
-    pdf2 = KernelDensityEstimate.kde!(in)
+    pdf_tree = KernelDensityEstimate.kde!(in)
     print("this is after kde")
     r1 = kde_grid[1]
     r2 = kde_grid[2]
     d = 2
-    vs = Matrix{Float64}(undef, d, length(r1)*length(r2))
     n,m = length(r1), length(r2)
+    vs = Matrix{Float64}(undef, d, n*m)
     for i in 1:n
         for j in  1:m
             v = [r1[i],r2[j]]
             vs[:,(i-1)*n+j] = v
         end
     end
-    pdfs = pdf2(vs)
-    pdfs_shift = pdfs.+1
+    pdfs = pdf_tree(vs)
+    pdfs_normed = pdfs./sum(pdfs)
+    pdfs_shift = pdfs_normed.+1
     potential = -log.(pdfs_shift)
     potential_matrix = reshape(potential, (n,m))
     return temp_outputs, potential_matrix # Check format of second return of this function.
@@ -118,7 +119,7 @@ function solve_prob_3d_new(prob_arg_list, p_arg)
     in[3,:] = temp_outputs[3]
     print("this is before kde")
     print("size(in)  ", size(in))
-    pdf2 = KernelDensityEstimate.kde!(in)
+    pdf_tree = KernelDensityEstimate.kde!(in)
     print("this is after kde")
     r1 = [-5.0:0.01:5.0;]
     r2 = [-5.0:0.01:5.0;]
@@ -134,7 +135,7 @@ function solve_prob_3d_new(prob_arg_list, p_arg)
             end
         end
     end
-    pdfs = pdf2(vs)
+    pdfs = pdf_tree(vs)
     pdfs_shift = pdfs.+1
     potential = -log.(pdfs_shift)
     potential_matrix = reshape(potential, (n,m,o))
@@ -169,7 +170,7 @@ function solve_prob_4d_new(prob_arg_list, p_arg)
     in[4,:] = temp_outputs[4]
     print("this is before kde")
     print("size(in)  ", size(in))
-    pdf2 = KernelDensityEstimate.kde!(in)
+    pdf_tree = KernelDensityEstimate.kde!(in)
     print("this is after kde")
     r1 = [-5.0:0.01:5.0;]
     r2 = [-5.0:0.01:5.0;]
@@ -188,7 +189,7 @@ function solve_prob_4d_new(prob_arg_list, p_arg)
             end
         end
     end
-    pdfs = pdf2(vs)
+    pdfs = pdf_tree(vs)
     pdfs_shift = pdfs.+1
     potential = -log.(pdfs_shift)
     potential_matrix = reshape(potential, (n, m, o, p))
