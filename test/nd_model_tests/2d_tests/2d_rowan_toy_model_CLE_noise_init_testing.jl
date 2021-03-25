@@ -1,6 +1,4 @@
-
 include("../../../src/includes.jl")
-
 
 function g_test(dx, x, p, t)
     function diagonal(vec)
@@ -64,10 +62,11 @@ function f_test(dx, x, p, t)
     f = S*hs
     dx .= f[1,:]
 end
-x0 = [1, 1]
-sigma_low = 0.01
+x0 = [-1, -1]
+sigma_low = 0.
 p = [0.5, 0.25, -0.4, 0.5, sigma_low]
-prob = SDEProblem(f_test, g_test, x0, (0.0, 900.0), p, noise_rate_prototype = zeros(2, 8))
+prob = SDEProblem(f_test, g_test, x0, (0.0, 1000.0), p, noise_rate_prototype = zeros(2, 8))
 nsol = solve(prob)
 
-plot(nsol)
+plot(nsol[1,:])
+plot(nsol[2,:])

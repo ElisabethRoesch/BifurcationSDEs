@@ -39,7 +39,7 @@ save(file_path_potential, key, b)
 # p_low_2 = contourf(b, title = "beta = 0.0", xlabel = "State 1", ylabel = "State 2", label = "Quasipotential", clims = (-10,0))
 # p_low_2 = contourf(b,clims = (-10,0), legend = :none, xticks =([0:250:1000;], ["0", "0.25", "0.5","0.75","1.0"]), yticks = ([0:250:1000;], ["0", "0.25", "0.5","0.75","1.0"]))
 p_low_2 = contourf(b, size = (500, 500))
-scatter(a[1],a[2])
+scatter(a[1],a[2], ylim = (-2,2), xlim = (-2,2))
 # Setting 3:
 key =  "1_3"
 prob_arg_list = test_prob_arg_list
@@ -55,7 +55,7 @@ save(file_path_potential, key, b)
 p_low_3 = contourf(b, size = (500, 500))
 # Summary:
 plot(p_low_1, p_low_2, p_low_3, layout = (1, 3), size = (1500, 500))
-
+scatter(a[1,], a[2])
 
 
 # EXAMPLE 2: Three settings (three different values for beta) for MEDIUM noise (sigma = 0.4)
