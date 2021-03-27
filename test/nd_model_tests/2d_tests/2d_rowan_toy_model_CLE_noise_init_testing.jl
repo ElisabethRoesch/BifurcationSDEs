@@ -38,9 +38,7 @@ function g_test(dx, x, p, t)
     dx .= p[5].*g
 end
 
-
 function f_test(dx, x, p, t)
-
     h1 = 2*p[1]*x[1]
     h2 = 4*p[2]*x[1]^3
     if p[3]<0
@@ -62,11 +60,11 @@ function f_test(dx, x, p, t)
     f = S*hs
     dx .= f[1,:]
 end
+
 x0 = [-1, -1]
 sigma_low = 0.
 p = [0.5, 0.25, -0.4, 0.5, sigma_low]
 prob = SDEProblem(f_test, g_test, x0, (0.0, 1000.0), p, noise_rate_prototype = zeros(2, 8))
 nsol = solve(prob)
-
 plot(nsol[1,:])
 plot(nsol[2,:])
