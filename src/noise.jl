@@ -38,7 +38,7 @@ end
 #     return dx
 # end
 
-
+# to be tested
 function g_2d_rowan_toy_root(dx, x, p, t) # pos x : g(x) = sqrt(f(x))
     x1 = 2*p[1]*x[1]-4*p[2]*x[1]^3-p[3]+4*p[4]*p[2]*x[2]^3
     x2 = 2*p[4]*p[1]*x[1]-4*p[4]*p[2]*x[1]^3-p[4]*p[3]+4*p[2]*x[2]^3
@@ -54,8 +54,8 @@ function g_2d_rowan_toy_root(dx, x, p, t) # pos x : g(x) = sqrt(f(x))
     return dx
 end
 
+# to be tested
 function g_2d_rowan_toy_CLE(dx, x, p, t) # TO DO
-
     # propensities:
     h1 = 2*p[1]*x[1]
     h2 = 4*p[2]*x[1]^3
