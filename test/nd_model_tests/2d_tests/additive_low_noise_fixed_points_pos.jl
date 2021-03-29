@@ -54,10 +54,11 @@ function save_res(res)
     end
 end
 
-save_res(res)
+
 
 sigmas = Array(range(0., step = 0.1, stop = 1.))
-#res = test_sigmas(sigmas)
+res = test_sigmas(sigmas)
+save_res(res)
 p1, p2 =  get_plots(res)
 plot(p1)
 savefig("large_scale_sigma/raw_pos_all.pdf")
