@@ -42,8 +42,8 @@ end
 
 function get_plot_pair(data_temp)
     a_temp, b_temp = data_temp
-    raw_plot_temp = contourf(b_temp, size = (1500, 500), xlab = "x1", ylab = "x2", label = "Q(X)")
-    q_plot_temp = scatter(a_temp[1],a_temp[2], xlab = "x1", ylab = "x2", label = "End points of simulation", xlim = (-2, 2),ylim = (-2, 2), size = (1500, 500))
+    q_plot_temp = contourf(b_temp, size = (1500, 500), xlab = "x1", ylab = "x2", label = "Q(X)")
+    raw_plot_temp  = scatter(a_temp[1],a_temp[2], xlab = "x1", ylab = "x2", label = "End points of simulation", xlim = (-2, 2),ylim = (-2, 2), size = (1500, 500))
     return raw_plot_temp, q_plot_temp
 end
 
