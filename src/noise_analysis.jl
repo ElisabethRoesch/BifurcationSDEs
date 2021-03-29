@@ -54,7 +54,7 @@ end
 
 function solve_prob_2d_new(prob_arg_list, p_arg)
     temp_f, temp_g, temp_tspan, initpoints, timepoints, npoints, kde_grid = prob_arg_list
-    temp_p = test_p
+    temp_p = p_arg
     n_states = length(initpoints)
     temp_outputs = [Float64[]  for j in 1:n_states]
     for i in 1:length(initpoints)
