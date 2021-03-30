@@ -49,8 +49,8 @@ end
 
 function save_res(res)
     for i in 1:length(res)
-        save("large_scale_sigma/raw_neg_$i.jld", "raw", res[i][1])
-        save("large_scale_sigma/q_neg_$i.jld", "q", res[i][2])
+        save("large_scale_sigma_low/raw_neg_$i.jld", "raw", res[i][1])
+        save("large_scale_sigma_low/q_neg_$i.jld", "q", res[i][2])
     end
 end
 
@@ -61,6 +61,6 @@ res = test_sigmas(sigmas)
 save_res(res)
 p1, p2 =  get_plots(res)
 plot(p1)
-savefig("large_scale_sigma/raw_neg_all.pdf")
+savefig("large_scale_sigma_low/raw_neg_all.pdf")
 plot(p2)
-savefig("large_scale_sigma/q_neg_all.pdf")
+savefig("large_scale_sigma_low/q_neg_all.pdf")
