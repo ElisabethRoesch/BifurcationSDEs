@@ -9,7 +9,7 @@ function test_sigmas(sigmas)
     len = 11
     initpoints = [Array(range(-2, stop = 2, length = len)), Array(range(-2, stop = 2, length = len))]
     npoints = 1000
-    kde_grid = [-2:0.1:2, -2:0.1:2]
+    kde_grid = [-10:.5:10, -10:.5:10]
     test_prob_arg_list = [f_2d_rowan_toy, g_nd_additive, tspan, initpoints, timepoints, npoints, kde_grid]
     res = []
     for sigma_temp in sigmas
