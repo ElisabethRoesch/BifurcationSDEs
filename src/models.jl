@@ -1,4 +1,4 @@
-
+# Toy example
 function f_2d_rowan_toy(dx,x,p,t) #p = [α, λ, β, c, σ]
     # alpha = p[1]
     # lamda = p[2]
@@ -34,6 +34,7 @@ function f_2d_rowan_toy(dx,x,p,t) #p = [α, λ, β, c, σ]
     return  dx
 end
 
+# Toggle switch
 function f_2d_gardner(x, p, t)
     u, v = x
     alpha1, beta, alpha2, gamma = p
@@ -42,6 +43,7 @@ function f_2d_gardner(x, p, t)
     return [du, dv]
 end
 
+# Developmental model Rowans transition states paper
 function f_4d_dev_model(x, p, t)
     N, OS, FGF, G = x
     alpha, gamma,   k0,     c0, c1, c2, c3, c4,     e0, e1, e2,     a0, a1, a2,     b0, b1, b2, b3,     LIF, I3  = p
