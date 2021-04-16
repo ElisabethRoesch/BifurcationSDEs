@@ -14,4 +14,5 @@ for i in 1:3
     end
 end
 plot(plts...)
+# make nice for paper
 savefig("entropy_additive_noise.pdf")
