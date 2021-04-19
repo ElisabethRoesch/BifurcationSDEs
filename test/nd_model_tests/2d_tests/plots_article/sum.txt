@@ -1,0 +1,4 @@
+To DO:
+- bifur 2d, beta induced
+- bifur 2d, sigma induced
+- bifur 1d, supercritical addtitive old fig.
