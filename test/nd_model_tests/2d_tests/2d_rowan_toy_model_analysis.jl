@@ -8,10 +8,10 @@ keys = ["1_1" "1_2" "1_3";
          "3_1" "3_2" "3_3"]
 set = Matrix(undef, size(keys)[1], size(keys)[2])
 function get_files(key)
-    # file_path_raw = string("test/nd_model_tests/2d_tests/data/rep_output_", key, "_raw.jld")
-    # file_path_potential = string("test/nd_model_tests/2d_tests/data/rep_output_", key, "_potential.jld")
-    file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_raw.jld")
-    file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
+    file_path_raw = string("test/nd_model_tests/2d_tests/data/rep_output_", key, "_raw.jld")
+    file_path_potential = string("test/nd_model_tests/2d_tests/data/rep_output_", key, "_potential.jld")
+    # file_path_raw = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_raw.jld")
+    # file_path_potential = string("test/nd_model_tests/2d_tests/data_CLE/rep_output_", key, "_potential.jld")
     rep_output_raw = load(file_path_raw)[key]
     rep_output_potential = load(file_path_potential)[key]
     return rep_output_raw, rep_output_potential

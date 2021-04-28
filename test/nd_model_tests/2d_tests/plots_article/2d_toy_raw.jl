@@ -1,4 +1,5 @@
-include("../../../src/includes.jl")
+# Raw samples in 2D with 2D entropy in title
+include("../../../../src/includes.jl")
 plts = []
 entrs = []
 for i in 1:3
