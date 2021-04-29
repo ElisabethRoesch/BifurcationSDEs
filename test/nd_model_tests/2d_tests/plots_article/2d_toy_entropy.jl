@@ -1,5 +1,5 @@
 include("../../../../src/includes.jl")
-
+using InformationMeasures
 # Load data
 keys = ["1_1" "1_2" "1_3";
         "2_1" "2_2" "2_3";
@@ -18,7 +18,7 @@ for i in 1:size(keys)[1]
     end
 end
 
-using InformationMeasures, Plots
+
 q_e_s2 = Matrix(undef, size(keys)[1], size(keys)[2])
 len = size(set[1,1][2])[1]
 for i in 1:size(keys)[1]
@@ -32,93 +32,13 @@ for i in 1:size(keys)[1]
 
     end
 end
+cols = ["#011f4b", "#005b96", "#b3cde0"]
 ps2 = []
-for i in 1:3
-    for j in 1:3
-        p2 = plot(q_e_s2[i,j])
-        push!(ps2, p2)
+    for i in 1:3
+        for j in 1:3
+            p2 = plot(q_e_s2[i,j], label = "", grid = "off", ylim = (0,2.5), color = "#005b96", fill=(0,0.5,"#b3cde0"), size = (500, 500))
+            push!(ps2, p2)
+        end
     end
-end
-plot(ps2..., layout = (3,3))
+    plot(ps2..., layout = (3,3))
 savefig("2d_toy_entropy.pdf")
-
-
-
-
-
-
-
-
-
-#plot(ps..., layout = (3,3))
-# savefig("entropy_colwise1_additive.pdf")
-# p_q_e_s = contourf(q_e_s)
-#
-#
-# p_1 = [1,2,3.3]
-# p_2 = [0 0 0;
-#         4 5 6.3]
-# e_p_1 = InformationMeasures.get_entropy(p_1)
-# e_p_2 = InformationMeasures.get_entropy(p_2)
-# p2_b = slicematrix(p_2)
-# e_p_2 = InformationMeasures.get_entropy(p2_b...)
-#
-#
-# a = slicematrix(rep_output_potential)
-#
-# #####
-#
-#
-#
-# #####
-# # Fisher infromation via FiniteDiff
-# using FiniteDiff
-# f(x) = x^2
-# res = FiniteDiff.hessian(f, [1])
-# #####
-#
-#
-# #####
-# # Entorpy with QuantumInformation
-# using
-#
-# # Example:
-# p_1 = [1,2,3]
-# p_2 = [1 2 3;
-#         4 5 6]
-#
-# s_e_p_1 = shannon_entropy(p_1)
-# v_e_p_1 = vonneumann_entropy(p_1)
-# s_e_p_2 = shannon_entropy(p_2) # Error
-# v_e_p_2 = vonneumann_entropy(p_2) # Error
-#
-# s_e = shannon_entropy(a...) # Error
-# v_e = vonneumann_entropy(a...) # Error
-# ####
-#
-# using Shannon
-# Shannon.entrpopy(p2)
-#
-# using Statistics, Plots
-# q_stds = Matrix(undef, size(keys)[1], size(keys)[2])
-# q_vars = Matrix(undef, size(keys)[1], size(keys)[2])
-# q_cors = Matrix(undef, size(keys)[1], size(keys)[2])
-# q_covs = Matrix(undef, size(keys)[1], size(keys)[2])
-#
-# for i in 1:size(keys)[1]
-#     for j in 1:size(keys)[2]
-#         q_stds[i,j] = std(set[i,j][2]) # std of potential
-#         q_vars[i,j] = var(set[i,j][2]) # std of potential
-#         q_cors[i,j] = cor(set[i,j][2]) # std of potential
-#         q_covs[i,j] = cov(set[i,j][2]) # std of potential
-#
-#     end
-# end
-# p_stds = contourf(q_stds)
-# p_vars = contourf(q_vars)
-# p_cors = contourf(q_cors, Nothing)
-# p_covs = contourf(q_covs)
-#
-#
-#
-# contourf([1 2 3; 1  NaN 3])
