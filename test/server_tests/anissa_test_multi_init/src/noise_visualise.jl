@@ -167,14 +167,14 @@ end
 function workflow_time_one_sig_one_alpha(rep_output_raw, ind_alpha, ind_sigma)
         p_ode_time = plot(grid = "off", xlab = "", ylab = "", label ="")
             for i in 0:9 # 9 is number fo time points saved per ODE/SDE solution
-                    plot!(1+i*10:10+i*10,rep_output_raw[ind_alpha,ind_sigma][1+i*20*10:10+i*20*10], color = :black, label = "")
+                    plot!(1+i*10:10+i*10,rep_output_raw[ind_alpha,ind_sigma][1+i*20*10:10+i*20*10], ylim =(-5,5), color = :black, label = "")
             end
-        plot!(size=(1600,400), axis = nothing)
+        plot!(size=(400,100), axis = nothing)
         return p_ode_time
 end
 
 function workflow_potential_one_sig_one_alpha(rep_output_potential, ind_alpha, ind_sigma)
     plt_pot = plot(-rep_output_potential[ind_alpha, ind_sigma], 1:length(rep_output_potential[ind_alpha, ind_sigma]),
-                    label = "",  xlab = "", xlim =(-5,5), ylab = "", grid = "off", color = :black ,size=(500,1000), axis = nothing)
+                    label = "",  xlab = "", xlim =(-5,5), ylab = "", grid = "off", color = :black ,size=(50,100), axis = nothing)
     return plt_pot
 end

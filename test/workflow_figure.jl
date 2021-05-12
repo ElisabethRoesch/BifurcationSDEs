@@ -13,22 +13,22 @@ rep_output_potential = load(file_path_potential)["rep_output_potential"]
 test_list_alpha[4]
 # inits eig bei -5, 5 aber wegen 0.2 timespan start saving those not visable
 p_time_ode_neg = workflow_time_one_sig_one_alpha(rep_output_raw, 4, 1)
-        savefig(string("test/plots/workflow/", bifur_type, "_p_time_ode_neg.pdf"))
+        savefig(string("test/plots/workflow/2/", bifur_type, "_p_time_ode_neg2.pdf"))
 p_time_ode_pos = workflow_time_one_sig_one_alpha(rep_output_raw, 6, 1)
-        savefig(string("test/plots/workflow/", bifur_type, "_p_time_ode_pos.pdf"))
+        savefig(string("test/plots/workflow/2/", bifur_type, "_p_time_ode_pos2.pdf"))
 p_time_sde_neg = workflow_time_one_sig_one_alpha(rep_output_raw, 4, 3)
-        savefig(string("test/plots/workflow/", bifur_type, "_p_time_sde_neg.pdf"))
+        savefig(string("test/plots/workflow/2/", bifur_type, "_p_time_sde_neg2.pdf"))
 p_time_sde_pos = workflow_time_one_sig_one_alpha(rep_output_raw, 6, 3)
-        savefig(string("test/plots/workflow/", bifur_type, "_p_time_sde_pos.pdf"))
+        savefig(string("test/plots/workflow/2/", bifur_type, "_p_time_sde_pos2.pdf"))
 
 p_pot_ode_pos = workflow_potential_one_sig_one_alpha(rep_output_potential, 6, 1)
-        savefig(string("test/plots/workflow/", bifur_type, "_p_pot_ode_pos.pdf"))
+        savefig(string("test/plots/workflow/2/", bifur_type, "_p_pot_ode_pos2.pdf"))
 p_pot_sde_neg = workflow_potential_one_sig_one_alpha(rep_output_potential, 4, 3)
-        savefig(string("test/plots/workflow/", bifur_type, "_p_pot_sde_neg.pdf"))
+        savefig(string("test/plots/workflow/2/", bifur_type, "_p_pot_sde_neg2.pdf"))
 p_pot_sde_pos = workflow_potential_one_sig_one_alpha(rep_output_potential, 6, 3)
-        savefig(string("test/plots/workflow/", bifur_type, "_p_pot_sde_pos.pdf"))
+        savefig(string("test/plots/workflow/2/", bifur_type, "_p_pot_sde_pos2.pdf"))
 p_pot_ode_neg = workflow_potential_one_sig_one_alpha(rep_output_potential, 4, 1)
-        savefig(string("test/plots/workflow/", bifur_type, "_p_pot_ode_neg.pdf"))
+        savefig(string("test/plots/workflow/2/", bifur_type, "_p_pot_ode_neg2.pdf"))
 
 
         # create a plot with 3 subplots and a custom layout
