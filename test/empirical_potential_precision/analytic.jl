@@ -60,3 +60,53 @@ using GR, JLD
 z = peaks(200)
 contourf(z)
 heatmap(z)
+
+
+ns = Array(range(-5, stop = 5, length =100))
+neg = -3.75
+zer = 0.
+pos = 3.75
+
+pot_neg_a = [f(neg,n) for n in ns]
+pot_zer_a = [f(zer,n) for n in ns]
+pot_pos_a = [f(pos,n) for n in ns]
+
+# For paper figure: plot slices:
+plot( ns, pot_neg_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-10,110))
+savefig("test/empirical_potential_precision/p_neg.pdf")
+plot( ns, pot_zer_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-10,110))
+savefig("test/empirical_potential_precision/p_zero.pdf")
+plot( ns, pot_pos_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-10,110))
+savefig("test/empirical_potential_precision/p_pos.pdf")
+
+
+
+
+a_l = length(det)
+b_l = length(det[1])
+as=1:a_l
+bs=1:b_l
+function f2(a, b)
+    return pot[a][b]
+end
+
+
+ind_neg = Int(round((15-3.75)/30*a_l))
+ind_zer = Int(a_l/2)
+ind_pos = a_l-ind_neg
+
+
+ind_list = 1:b_l
+q_neg_a = [f2(ind_neg,n) for n in ind_list]
+q_zer_a = [f2(ind_zer,n) for n in ind_list]
+q_pos_a = [f2(ind_pos,n) for n in ind_list]
+
+# For paper figure: plot slices:
+plot( ind_list, q_neg_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-2.5,0))
+savefig("test/empirical_potential_precision/q_neg.pdf")
+
+plot( ind_list, q_zer_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-2.5,0))
+savefig("test/empirical_potential_precision/q_zer.pdf")
+
+plot( ind_list, q_pos_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-2.5,0))
+savefig("test/empirical_potential_precision/q_pos.pdf")
