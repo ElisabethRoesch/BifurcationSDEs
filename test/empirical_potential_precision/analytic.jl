@@ -72,11 +72,11 @@ pot_zer_a = [f(zer,n) for n in ns]
 pot_pos_a = [f(pos,n) for n in ns]
 
 # For paper figure: plot slices:
-plot( ns, pot_neg_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-10,110))
+plot( ns, pot_neg_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-10,110), size = (270,180))
 savefig("test/empirical_potential_precision/p_neg.pdf")
-plot( ns, pot_zer_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-10,110))
+plot( ns, pot_zer_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-10,110), size = (270,180))
 savefig("test/empirical_potential_precision/p_zero.pdf")
-plot( ns, pot_pos_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-10,110))
+plot( ns, pot_pos_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-10,110), size = (270,180))
 savefig("test/empirical_potential_precision/p_pos.pdf")
 
 
@@ -102,11 +102,9 @@ q_zer_a = [f2(ind_zer,n) for n in ind_list]
 q_pos_a = [f2(ind_pos,n) for n in ind_list]
 
 # For paper figure: plot slices:
-plot( ind_list, q_neg_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-2.5,0))
+plot( ind_list, q_neg_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-2.5,0), size = (270,180))
 savefig("test/empirical_potential_precision/q_neg.pdf")
-
-plot( ind_list, q_zer_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-2.5,0))
+plot( ind_list, q_zer_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-2.5,0), size = (270,180))
 savefig("test/empirical_potential_precision/q_zer.pdf")
-
-plot( ind_list, q_pos_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-2.5,0))
+plot( ind_list, q_pos_a, label = "", grid = "off", color = "#0e6b0e", ylim = (-2.5,0), size = (270,180))
 savefig("test/empirical_potential_precision/q_pos.pdf")
