@@ -215,6 +215,6 @@ end
 
 function workflow_potential_one_sig_one_alpha(rep_output_potential, ind_alpha, ind_sigma)
     plt_pot = plot(-rep_output_potential[ind_alpha, ind_sigma], 1:length(rep_output_potential[ind_alpha, ind_sigma]),
-                    label = "",  xlab = "", xlim =(-5,5), ylab = "", grid = "off", color = :black ,size=(500,1000), axis = nothing)
+                    label = "",  xlab = "", xlim =(-2,0), ylab = "", grid = "off", color = :black ,size=(500,1000), axis = nothing)
     return plt_pot
 end
